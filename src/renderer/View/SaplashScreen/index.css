@@ -1,0 +1,149 @@
+@import  url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+body{
+    
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+     
+    justify-content:space-evenly;
+    flex:1;
+    display:block;
+    background-color: #ffffff;
+}
+
+
+#logodiv{
+   
+    height:40vh;
+    width: 100%;
+    justify-content:center;
+    align-items: center;
+    display: flex;
+}
+
+
+#loadinDiv{
+  
+    height:30vh;
+    width: 100%;
+    justify-content:center;
+    align-items: center;
+    display: flex;
+}
+.Loading-text{
+  font-size: 18px;
+  font-style: normal;
+  color: #000000;
+  text-align: center;
+  margin-left: 10pxs;
+}
+
+
+#VersionDiv{
+     
+    height:30vh;
+    width: 100%;
+    justify-content:center;
+    align-items: center;
+    display: flex;
+}
+.logoImg{
+    height:80px;
+    width:100px;
+
+}
+
+ 
+ 
+
+ 
+
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin3D {
+  from {
+    transform: rotate3d(.5,.5,.5, 360deg);
+  }
+  to{
+    transform: rotate3d(0deg);
+  }
+}
+
+.w1 {
+  transform: rotate3D(1, 1, 1, 90deg);
+}
+
+.w2 {
+  transform: rotate3D(1, 2, .5, 90deg);
+}
+
+.w3 {
+  transform: rotate3D(.5, 1, 2, 90deg);
+}
+
+ 
+.spinner-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.blue-orbit {
+	width: 50px;
+	height: 50px;
+  border: 1px solid #91daffa5;
+  -webkit-animation: spin3D 3s linear .2s infinite;
+}
+
+.leo {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+
+
+.green-orbit {
+	width: 40px;
+	height: 40px;
+  border: 1px solid #91ffbfa5;
+  -webkit-animation: spin3D 2s linear 0s infinite;
+}
+
+.red-orbit {
+	width: 30px;
+	height: 30px;
+  border: 1px solid #ffca91a5;
+  -webkit-animation: spin3D 1s linear 0s infinite;
+}
+
+.white-orbit {
+	width: 20px;
+	height: 20px;
+  border: 1.5px solid #000000;
+  -webkit-animation: spin3D 10s linear 0s infinite;
+}
+.three-quarter-spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fb5b53;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin .5s linear 0s infinite;
+}

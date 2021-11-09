@@ -26,7 +26,7 @@ export default class AppUpdater {
 }
 
 let mainWindow: BrowserWindow | null = null;
-
+let SaplasshWindow: BrowserWindow | null = null;
 ipcMain.on('ipc-example', async (event, arg) => {
   const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
   console.log(msgTemplate(arg));
@@ -41,9 +41,9 @@ if (process.env.NODE_ENV === 'production') {
 const isDevelopment =
   process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true';
 
-if (isDevelopment) {
-  require('electron-debug')();
-}
+// if (isDevelopment) {
+//   require('electron-debug')();
+// }
 
 const installExtensions = async () => {
   const installer = require('electron-devtools-installer');
@@ -71,6 +71,8 @@ const createWindow = async () => {
     return path.join(RESOURCES_PATH, ...paths);
   };
 
+app.whenReady()
+.then(() => {
   mainWindow = new BrowserWindow({
     show: false,
     width: 1024,
@@ -81,6 +83,21 @@ const createWindow = async () => {
     },
   });
 
+  SaplasshWindow = new BrowserWindow({
+    width: 340,
+    height: 200,
+    backgroundColor: '#FFFFFF',
+    frame: false,
+    transparent: true,
+    
+    webPreferences: {
+      nodeIntegration: false,
+      contextIsolation: true,
+    }
+  })
+
+  SaplasshWindow.loadFile('../renderer/View/SaplashScreen/SaplasshWindow.html')
+   
   mainWindow.loadURL(resolveHtmlPath('index.html'));
 
   mainWindow.on('ready-to-show', () => {
@@ -90,7 +107,11 @@ const createWindow = async () => {
     if (process.env.START_MINIMIZED) {
       mainWindow.minimize();
     } else {
-      mainWindow.show();
+      setTimeout(() => {
+        // SaplasshWindow?.destroy()
+        mainWindow?.show();
+      }, 3000);
+      
     }
   });
 
@@ -110,6 +131,7 @@ const createWindow = async () => {
   // Remove this if your app does not use auto updates
   // eslint-disable-next-line
   new AppUpdater();
+})
 };
 
 /**
