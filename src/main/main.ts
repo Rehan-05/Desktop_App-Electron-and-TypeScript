@@ -11,7 +11,7 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import path from 'path';
-import { app, BrowserWindow, shell, ipcMain } from 'electron';
+import { app, BrowserWindow, shell } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
@@ -27,11 +27,7 @@ export default class AppUpdater {
 
 let mainWindow: BrowserWindow | null = null;
 let SaplasshWindow: BrowserWindow | null = null;
-ipcMain.on('ipc-example', async (event, arg) => {
-  const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
-  console.log(msgTemplate(arg));
-  event.reply('ipc-example', msgTemplate('pong'));
-});
+
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -77,27 +73,36 @@ app.whenReady()
     show: false,
     width: 1024,
     height: 728,
-    icon: getAssetPath('icon.png'),
+
+    minWidth:500,
+    minHeight:650,
+    icon: getAssetPath('PA.ico'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration:true,
     },
   });
 
   SaplasshWindow = new BrowserWindow({
     width: 340,
     height: 200,
+    minWidth:340,
+    maxWidth:340,
+    minHeight:200,
+    maxHeight:200,
+
     backgroundColor: '#FFFFFF',
     frame: false,
     transparent: true,
-    
+
     webPreferences: {
-      nodeIntegration: false,
+      nodeIntegration: true,
       contextIsolation: true,
     }
   })
 
   SaplasshWindow.loadFile('../renderer/View/SaplashScreen/SaplasshWindow.html')
-   
+
   mainWindow.loadURL(resolveHtmlPath('index.html'));
 
   mainWindow.on('ready-to-show', () => {
@@ -108,10 +113,10 @@ app.whenReady()
       mainWindow.minimize();
     } else {
       setTimeout(() => {
-        // SaplasshWindow?.destroy()
+        SaplasshWindow?.destroy()
         mainWindow?.show();
-      }, 3000);
-      
+      }, 1000);
+
     }
   });
 
