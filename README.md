@@ -1,3 +1,11 @@
+# Document
+All the Document are saved in `Docs folder`
+# Backend Code 
+is placed in `backend folder`
+# front end 
+is placed in `Main Directory` of Project Alliance
+
+
 New Projects For Quick Fix
 
 Clone project into your PC
