@@ -35,7 +35,9 @@ export default function FogotPassword() {
                 id="email"
                 className="inputStyle"
                 placeholder="rehan@gmail.com"
-                {...register('Email')}
+            {...register("Email",{pattern:/^[\w]{3,}@[a-z]*\.[a-zA-Z]*/,required:true})}
+
+
               />
             </Col>
           </Row>

@@ -72,12 +72,12 @@ export default function SignIn() {
         <Row style={{ marginTop: 10 }}>
           <Col>
             <input type="text" id="email" className="inputStyle"
-            {...register("Email",)}
+            {...register("Email",{pattern:/^[\w]{3,}@[a-z]*\.[a-zA-Z]*/,required:true})}
             />
           </Col>
           <Col>
             <input type="password"  id="Password" className="inputStyle"
-            {...register("Password",)}
+            {...register("Password",{pattern:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,required:true})}
             />
           </Col>
         </Row>
