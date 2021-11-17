@@ -4,6 +4,9 @@ import Button from 'renderer/Components/Button';
 import NeedAccount from 'renderer/Components/NeedAccount';
 import { useForm ,SubmitHandler} from "react-hook-form";
 import InputButton from 'renderer/Components/InputButton';
+import React from 'react';
+
+import getData from '../../Util/apitClass';
 interface IFormInput {
   Email: string;
   Password: string;
@@ -12,6 +15,18 @@ interface IFormInput {
 export default function SignIn() {
   const { register, handleSubmit }=useForm<IFormInput>();
   const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
+
+  React.useEffect(()=>{
+    debugger
+   getData.getAll().then(data => {
+    debugger
+     console.log(data)
+   })
+   .catch(err => {
+    debugger
+     console.log(err)
+   })
+  },[])
   return (
     <div className="AuthContainer">
       {/* Cretae Accoutn Tag */}
@@ -108,6 +123,9 @@ export default function SignIn() {
     </div>
   );
 }
+
+
+
 
 
 
