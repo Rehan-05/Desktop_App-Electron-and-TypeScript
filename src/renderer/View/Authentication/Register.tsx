@@ -4,6 +4,8 @@ import Button from 'renderer/Components/Button';
 import NeedAccount from 'renderer/Components/NeedAccount';
 import { useForm ,SubmitHandler} from "react-hook-form";
 import InputButton from 'renderer/Components/InputButton';
+
+
 interface IFormInput {
   Email: string;
   Password: string;
@@ -15,6 +17,7 @@ interface IFormInput {
 export default function Register() {
   const { register, handleSubmit }=useForm<IFormInput>();
   const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
+
   return (
     <div className="AuthContainer">
       {/* Cretae Accoutn Tag */}
@@ -69,7 +72,7 @@ export default function Register() {
           </Col>
           <Col>
             <input type="text" id="userName" className="inputStyle"
-            {...register("userName",{required:true,pattern:/^[\w]+$/})}
+            {...register("userName",{required:true,pattern:/^[\w]$/})}
             />
           </Col>
         </Row>
@@ -82,12 +85,12 @@ export default function Register() {
         <Row style={{ marginTop: 10 }}>
           <Col>
             <input type="text" id="email" className="inputStyle"
-            {...register("Email",{required:true,pattern:/^[\w]+$/})}
+           {...register("Email",{pattern:/^[\w]{3,}@[a-z]*\.[a-zA-Z]*/,required:true})}
             />
           </Col>
           <Col>
             <input type="password" id="Password" className="inputStyle"
-            {...register("Password",{required:true,pattern:/^[\w]+$/})}
+            {...register("Password",{pattern:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,required:true})}
             />
           </Col>
         </Row>

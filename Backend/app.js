@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 var bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/userRoute');
+// var usersRouter = require('./routes/userRoute');
 
 var app = express();
 
@@ -38,7 +38,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/api/users', usersRouter);
+// app.use('/api/users', usersRouter);
+
+require('./routes/auth.routes')
+require('./routes/user.routes')
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
