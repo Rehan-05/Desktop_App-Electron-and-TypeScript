@@ -13,7 +13,7 @@ import Loader from 'renderer/Components/Loader';
 
 export default function Auth() {
   const user=useSelector(({auth}:AUTH)=>{ return auth.user})
-  const isChecking=useSelector(({auth}:AUTH)=>{return auth.login?.isChecking})
+  const isChecking=useSelector(({auth}:AUTH)=>{return (auth.login?.isChecking||auth.register?.isChecking)})
 
   React.useEffect(()=>{
 

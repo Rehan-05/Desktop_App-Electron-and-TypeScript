@@ -16,7 +16,10 @@ const signin=(Data:IFormInput)=> (dispatch: any)=>{
   .catch((err)=>
     {
 
-  dispatch({type:"AUTH_LOGIN_ERROR",error:err.response.data})})
+  dispatch({type:"AUTH_LOGIN_ERROR",error:err.response.data})
+  return err.response.data;
+})
+
 }
 
 const register=(Data:IFormInput)=> (dispatch: any)=>{
@@ -30,7 +33,7 @@ const register=(Data:IFormInput)=> (dispatch: any)=>{
   }).then(data=>{
     debugger
 
-    dispatch({type:"AUTH_REGISTER_SUCCESS",user:{...data.data,status:data.status}})
+    dispatch(signin(Data))
     return data;
   })
   .catch((err)=>

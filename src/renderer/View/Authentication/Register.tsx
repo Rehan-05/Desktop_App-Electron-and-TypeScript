@@ -7,6 +7,7 @@ import InputButton from 'renderer/Components/InputButton';
 import { ErrorMessage } from '@hookform/error-message';
 import { IFormInput } from 'Types/User.types';
 import {useDispatch} from 'react-redux';
+import React from 'react';
 
 
 import {register as REGISTER} from '../../Store/Actions/auth.action'
@@ -22,6 +23,8 @@ export default function Register() {
     // console.log(data)
     dispatch(REGISTER(data))
   };
+
+  const [isAgree,setIsAgree]=React.useState<boolean>(false)
 
 
   return (
@@ -140,59 +143,9 @@ export default function Register() {
 
         <div>
 
-        <ErrorMessage
-        errors={errors}
-        name="name"
-        render={({ messages }) => {
-          console.log("messages", messages);
-          return messages
-            ? Object.entries(messages).map(([type, message]) => (
-                <p style={{fontSize:10,color:'red'}} key={type}>{message}</p>
-              ))
-            : null;
-        }}
-      />
 
 
-{/*
-         <ErrorMessage
-        errors={errors}
-        name="name userName"
-        render={({ messages }) => {
-          debugger
-          console.log("messages", messages);
-          return messages
-            ? Object.entries(messages).map(([type, message]) => (
-                <p style={{fontSize:10,color:'red'}} key={type}>{message}</p>
-              ))
-            : null;
-        }}
-      />
 
-        <ErrorMessage
-        errors={errors}
-        name="Email"
-        render={({ messages }) => {
-          console.log("messages", messages);
-          return messages
-            ? Object.entries(messages).map(([type, message]) => (
-                <p style={{fontSize:10,color:'red'}} key={type}>{message}</p>
-              ))
-            : null;
-        }}
-      />
-      <ErrorMessage
-        errors={errors}
-        name="Password"
-        render={({ messages }) => {
-          console.log("messages", messages);
-          return messages
-            ? Object.entries(messages).map(([type, message]) => (
-                <p style={{fontSize:10,color:'red'}} key={type}>{message}</p>
-              ))
-            : null;
-        }}
-      /> */}
         </div>
 
         <div style={{ alignItems: 'center', display: 'flex', marginTop: 25 }}>
@@ -200,6 +153,8 @@ export default function Register() {
             className="CheckBox mr-1"
             type="checkbox"
             id="flexCheckDefault"
+            checked={isAgree}
+            onChange={()=>setIsAgree(!isAgree)}
           />
           <label
             className="form-check-label ml-1"
@@ -218,8 +173,9 @@ export default function Register() {
         </div>
 
         <InputButton
+        disabled={isAgree}
           buttonStyle={{
-            backgroundImage: ` linear-gradient(to right, #B543F1 0%, #BF3EC9 47%, #EE4086 100%)`,
+            backgroundImage: isAgree?` linear-gradient(to right, #B543F1 0%, #BF3EC9 47%, #EE4086 100%)`:'gray',
             boxShadow: `3.994px 22.651px 57px rgba(97, 73, 205, 0.259)`,
             color: '#FFFFFF',
             width:300,marginTop:30
