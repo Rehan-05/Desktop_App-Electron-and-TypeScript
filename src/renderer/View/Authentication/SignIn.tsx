@@ -6,27 +6,42 @@ import { useForm ,SubmitHandler} from "react-hook-form";
 import InputButton from 'renderer/Components/InputButton';
 import React from 'react';
 
-import getData from '../../Util/apitClass';
-interface IFormInput {
-  Email: string;
-  Password: string;
-  remindMe: number;
-}
-export default function SignIn() {
-  const { register, handleSubmit }=useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
+import {IFormInput,
+  AUTH
+} from '../../../Types/User.types';
+import { ErrorMessage } from '@hookform/error-message';
+import {signin} from '../../Store/Actions/auth.action'
+import { useDispatch,
+  useSelector
+ } from 'react-redux';
 
-  React.useEffect(()=>{
+
+
+export default function SignIn() {
+
+  const dispatch=useDispatch();
+  const ServerError=useSelector(({auth}:AUTH)=>{return auth.login.error})
+
+  const { register,formState: { errors }, handleSubmit }=useForm<IFormInput>({criteriaMode:'all'});
+  const onSubmit: SubmitHandler<IFormInput> = Data => {
     debugger
-   getData.getAll().then(data => {
-    debugger
-     console.log(data)
-   })
-   .catch(err => {
-    debugger
-     console.log(err)
-   })
-  },[])
+   dispatch(signin(Data))
+
+  };
+  const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
+
+ React.useEffect(()=>{
+   if(ServerError){
+      SetErrorMessage(ServerError.message)
+   }
+   else if(errors.userName){
+     SetErrorMessage(errors?.userName?.message||'')
+   }
+   else if(errors.Password){
+      SetErrorMessage(errors?.Password?.message||'')
+   }
+ },[errors])
+
   return (
     <div className="AuthContainer">
       {/* Cretae Accoutn Tag */}
@@ -39,6 +54,7 @@ export default function SignIn() {
           iconName="social-google"
           font="SimpleLineIcons"
           className="CusomtButtonTitle"
+          // onClick={()=>console.log(error)}
           buttonStyle={{
             backgroundImage: `linear-gradient(to right, #F9B035 0%, #F98C4E 53%, #F96767 100%)`,
             boxShadow: `3.994px 22.651px 57px  rgba(249, 103, 103, 0.259)`,
@@ -65,28 +81,48 @@ export default function SignIn() {
 
        <form onSubmit={handleSubmit(onSubmit)}>
        <Row style={{ marginTop: 10 }}>
-          <Col className="LabelInput">Email</Col>
+          <Col className="LabelInput">UserName</Col>
           <Col className="LabelInput">Password</Col>
         </Row>
 
         <Row style={{ marginTop: 10 }}>
           <Col>
             <input type="text" id="email" className="inputStyle"
-            {...register("Email",{pattern:/^[\w]{3,}@[a-z]*\.[a-zA-Z]*/,required:true})}
+            onFocus={()=>SetErrorMessage('')}
+            {...register("userName", {
+              required: "This input is required.",
+              pattern: {
+                value: /\w+/,
+                message: "UserName contain alphabate and numbers only."
+              }
+            })}
             />
           </Col>
           <Col>
             <input type="password"  id="Password" className="inputStyle"
-            {...register("Password",{pattern:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,required:true})}
+            onFocus={()=>SetErrorMessage('')}
+            {...register("Password",
+            {
+              required: "This input is required.",
+              pattern: {
+                value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
+                message: "Password contain 1 alphabate and 1 numbers and minimum 8 Charcter."
+              }
+            }
+            )}
             />
           </Col>
         </Row>
+
+        <div style={{color:'red',fontSize:14,fontFamily:'Manrope',marginTop:5}}>
+          {ErrorMessage}
+        </div>
 
         <div style={{ alignItems: 'center', display: 'flex', marginTop: 25 }}>
           <input
             className="CheckBox mr-1"
             type="checkbox"
-            {...register("remindMe")}
+            {...register("rememberme")}
             id="flexCheckDefault"
           />
           <label

@@ -214,6 +214,10 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "@hookform/error-message": "^2.0.0",
+    "@mui/material": "^5.1.1",
     "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.24.0",
     "bootstrap": "^5.1.3",

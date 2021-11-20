@@ -11,16 +11,27 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
+
+const cors = require("cors");
+var corsOptions = {
+  origin: "http://localhost:1212"
+};
+
+app.use(cors(corsOptions));
+
+const db = require("./model");
+const Role = db.role;
 // Mongo CONNECTION
 
-mongoose.connect('mongodb://localhost:27017/test',
+mongoose.connect('mongodb://localhost:27017/ProjectAlliance',
 );
 
 
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
-db.once("open", function () {
+const Database = mongoose.connection;
+Database.on("error", console.error.bind(console, "connection error: "));
+Database.once("open", function () {
   console.log("Connected successfully");
+  initial()
 });
 
 // view engine setup
@@ -40,13 +51,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 // app.use('/api/users', usersRouter);
 
-require('./routes/auth.routes')
-require('./routes/user.routes')
+require('./routes/auth.routes')(app)
+require('./routes/user.routes')(app)
 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  console.log("error genrated here")
+  console.log("error genrated here ok")
   next(createError(404));
 });
 
@@ -60,5 +71,45 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
+
+function initial() {
+  Role.estimatedDocumentCount((err, count) => {
+    if (!err && count === 0) {
+      new Role({
+        name: "user"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'user' to roles collection");
+      });
+
+      new Role({
+        name: "moderator"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'moderator' to roles collection");
+      });
+
+      new Role({
+        name: "admin"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'admin' to roles collection");
+      });
+    }
+  });
+}
+
 
 module.exports = app;

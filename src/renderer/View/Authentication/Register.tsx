@@ -4,19 +4,25 @@ import Button from 'renderer/Components/Button';
 import NeedAccount from 'renderer/Components/NeedAccount';
 import { useForm ,SubmitHandler} from "react-hook-form";
 import InputButton from 'renderer/Components/InputButton';
+import { ErrorMessage } from '@hookform/error-message';
+import { IFormInput } from 'Types/User.types';
+import {useDispatch} from 'react-redux';
 
 
-interface IFormInput {
-  Email: string;
-  Password: string;
-  userName: string;
-  name: string;
-}
+import {register as REGISTER} from '../../Store/Actions/auth.action'
+
+
 
 
 export default function Register() {
-  const { register, handleSubmit }=useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
+  const dispatch = useDispatch();
+  const { register,formState: { errors }, handleSubmit }=useForm<IFormInput>({criteriaMode:'all'});
+  const onSubmit: SubmitHandler<IFormInput> = data => {
+    debugger
+    // console.log(data)
+    dispatch(REGISTER(data))
+  };
+
 
   return (
     <div className="AuthContainer">
@@ -67,12 +73,31 @@ export default function Register() {
         <Row style={{ marginTop: 10 }}>
           <Col>
             <input type="text" id="name" className="inputStyle"
-            {...register("name",{required:true,pattern:/^[A-Za-z]+$/})}
+            placeholder="e.g:- John"
+            {...register("name",
+            {
+              required: "This input is required.",
+              pattern: {
+                value: /[a-zA-Z]+/,
+                message: "Name contain only alphabate."
+              }
+            }
+            )}
             />
           </Col>
           <Col>
             <input type="text" id="userName" className="inputStyle"
-            {...register("userName",{required:true,pattern:/^[\w]$/})}
+            placeholder="as12"
+            {...register("userName",
+
+            {
+              required: "This input is required.",
+              pattern: {
+                value: /\w+/,
+                message: "UserName contain alphabate and numbers only."
+              }
+            }
+            )}
             />
           </Col>
         </Row>
@@ -85,15 +110,90 @@ export default function Register() {
         <Row style={{ marginTop: 10 }}>
           <Col>
             <input type="text" id="email" className="inputStyle"
-           {...register("Email",{pattern:/^[\w]{3,}@[a-z]*\.[a-zA-Z]*/,required:true})}
+            placeholder="irtza@gmail.com"
+           {...register("Email",
+           {
+            required: "This input is required.",
+            pattern: {
+              value: /^[\w]{3,}@[a-z]*\.[a-zA-Z]*/,
+              message: "Please use Correct Formate of email address"
+            }
+          }
+           )}
             />
           </Col>
           <Col>
             <input type="password" id="Password" className="inputStyle"
-            {...register("Password",{pattern:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,required:true})}
+            placeholder="*****"
+            {...register("Password",
+            {
+              required: "This input is required.",
+              pattern: {
+                value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
+                message: "Password contain 1 alphabate and 1 numbers."
+              }
+            }
+            )}
             />
           </Col>
         </Row>
+
+        <div>
+
+        <ErrorMessage
+        errors={errors}
+        name="name"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p style={{fontSize:10,color:'red'}} key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      />
+
+
+{/*
+         <ErrorMessage
+        errors={errors}
+        name="name userName"
+        render={({ messages }) => {
+          debugger
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p style={{fontSize:10,color:'red'}} key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      />
+
+        <ErrorMessage
+        errors={errors}
+        name="Email"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p style={{fontSize:10,color:'red'}} key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      />
+      <ErrorMessage
+        errors={errors}
+        name="Password"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p style={{fontSize:10,color:'red'}} key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      /> */}
+        </div>
 
         <div style={{ alignItems: 'center', display: 'flex', marginTop: 25 }}>
           <input
