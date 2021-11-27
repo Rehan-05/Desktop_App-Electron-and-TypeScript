@@ -1,6 +1,6 @@
 
-
-import Icon from 'react-web-vector-icons';
+import React,{Suspense} from 'react'
+const  Icon = React.lazy(()=>import('react-web-vector-icons'));
 export default function Button({
   onClick = () => {},
   iconName="google",
@@ -15,12 +15,12 @@ export default function Button({
   return (
       <button className={`btn ButtonStyle ${className}`} style={{...buttonStyle}} onClick={onClick}>
         <span style={{marginRight: 10}}>
-        {icon&& <Icon
+        {icon&&<Suspense fallback={<div>Loading...</div>}> <Icon
           name={iconName}
           color={color}
           size={size}
           font={font}
-        />}
+        /></Suspense>}
 
         </span>
        {title}

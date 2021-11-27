@@ -5,8 +5,8 @@ import NeedAccount from 'renderer/Components/NeedAccount';
 import { useForm ,SubmitHandler} from "react-hook-form";
 import InputButton from 'renderer/Components/InputButton';
 import { ErrorMessage } from '@hookform/error-message';
-import { IFormInput } from 'Types/User.types';
-import {useDispatch} from 'react-redux';
+import { AUTH, IFormInput } from 'Types/User.types';
+import {useDispatch, useSelector} from 'react-redux';
 import React from 'react';
 
 
@@ -25,7 +25,24 @@ export default function Register() {
   };
 
   const [isAgree,setIsAgree]=React.useState<boolean>(false)
-
+  const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
+  const ServerErrorLogin=useSelector(({auth}:AUTH)=>{return auth.login.error})
+  const ServerErrorRegister=useSelector(({auth}:AUTH)=>{return auth.register.error})
+ React.useEffect(()=>{
+   if(ServerErrorLogin){
+      SetErrorMessage(ServerErrorLogin.message)
+   }
+   else if(ServerErrorRegister){
+     debugger
+     SetErrorMessage(ServerErrorRegister.message)
+   }
+   else if(errors.userName){
+     SetErrorMessage(errors?.userName?.message||'')
+   }
+   else if(errors.Password){
+      SetErrorMessage(errors?.Password?.message||'')
+   }
+ },[errors])
 
   return (
     <div className="AuthContainer">
@@ -40,8 +57,8 @@ export default function Register() {
 
         <Button
         icon={true}
-          iconName="social-google"
-          font="SimpleLineIcons"
+        iconName="google"
+        font="MaterialCommunityIcons"
           className="CusomtButtonTitle"
           buttonStyle={{
             backgroundImage: `linear-gradient(to right, #F9B035 0%, #F98C4E 53%, #F96767 100%)`,
@@ -59,8 +76,9 @@ export default function Register() {
             borderStyle: 'solid',
             borderColor: '#EBEBEB',
           }}
-          iconName="facebook"
-          font="Feather"
+          size={20}
+          iconName="sc-facebook"
+          font="EvilIcons"
           className="CusomtButtonTitle"
           title="with Facebook"
         />
@@ -140,12 +158,9 @@ export default function Register() {
             />
           </Col>
         </Row>
-
-        <div>
-
-
-
-
+{/* Error showing in below Div */}
+        <div style={{color:'red',fontSize:14,fontFamily:'Manrope',marginTop:5}}>
+          {ErrorMessage}
         </div>
 
         <div style={{ alignItems: 'center', display: 'flex', marginTop: 25 }}>
@@ -173,12 +188,13 @@ export default function Register() {
         </div>
 
         <InputButton
-        disabled={isAgree}
+        disabled={!isAgree}
           buttonStyle={{
-            backgroundImage: isAgree?` linear-gradient(to right, #B543F1 0%, #BF3EC9 47%, #EE4086 100%)`:'gray',
+            backgroundImage: ` linear-gradient(to right, #B543F1 0%, #BF3EC9 47%, #EE4086 100%)`,
             boxShadow: `3.994px 22.651px 57px rgba(97, 73, 205, 0.259)`,
             color: '#FFFFFF',
-            width:300,marginTop:30
+            width:300,marginTop:30,
+            backgroundColor:isAgree?null:"gray"
           }}
           title=" Sign Up"
 

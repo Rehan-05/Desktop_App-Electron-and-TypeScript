@@ -13,15 +13,10 @@ import Loader from 'renderer/Components/Loader';
 
 export default function Auth() {
   const user=useSelector(({auth}:AUTH)=>{ return auth.user})
-  const isChecking=useSelector(({auth}:AUTH)=>{return (auth.login?.isChecking||auth.register?.isChecking)})
+  const isChecking=useSelector(({auth}:AUTH)=>{return (auth.login?.isChecking)})
+  const isCheckingR=useSelector(({auth}:AUTH)=>{return (auth.register?.isChecking)})
 
-  React.useEffect(()=>{
-
-
-    console.log("error" +isChecking)
-
-  },[isChecking])
-  if(isChecking) {
+  if(isChecking||isCheckingR) {
     return (<div className="Container">
       <Loader />
     </div>)
