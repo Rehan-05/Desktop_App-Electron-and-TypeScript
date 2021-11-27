@@ -99,7 +99,7 @@ export default function Register() {
             {
               required: "This input is required.",
               pattern: {
-                value: /[a-zA-Z]+/,
+                value: /[a-zA-Z]{3,}/,
                 message: "Name contain only alphabate."
               }
             }
@@ -114,7 +114,7 @@ export default function Register() {
             {
               required: "This input is required.",
               pattern: {
-                value: /\w+/,
+                value: /\w{3,}/,
                 message: "UserName contain alphabate and numbers only."
               }
             }
