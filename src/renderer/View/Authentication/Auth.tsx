@@ -8,52 +8,40 @@ import {
   Redirect,
 } from 'react-router-dom';
 import { AppLogo, AuthBackPic } from '../../Constant/Images';
-import { Register, SignIn, ForgotPassword } from '.';
+import { Register, SignIn, ForgotPassword } from './';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { AUTH } from 'Types/User.types';
 import Loader from 'renderer/Components/Loader';
 
 export default function Auth() {
-<<<<<<< HEAD
   const user = useSelector(({ auth }: AUTH) => {
     return auth.user;
   });
   const isChecking = useSelector(({ auth }: AUTH) => {
-    return auth.login?.isChecking || auth.register?.isChecking;
+    return auth.login?.isChecking;
+  });
+  const isCheckingR = useSelector(({ auth }: AUTH) => {
+    return auth.register?.isChecking;
   });
 
-  React.useEffect(() => {
-    console.log('error' + isChecking);
-  }, [isChecking]);
-  if (isChecking) {
+  if (isChecking || isCheckingR) {
     return (
       <div className="Container">
         <Loader />
       </div>
     );
-=======
-  const user=useSelector(({auth}:AUTH)=>{ return auth.user})
-  const isChecking=useSelector(({auth}:AUTH)=>{return (auth.login?.isChecking)})
-  const isCheckingR=useSelector(({auth}:AUTH)=>{return (auth.register?.isChecking)})
-
-  if(isChecking||isCheckingR) {
-    return (<div className="Container">
-      <Loader />
-    </div>)
->>>>>>> 32b2eca9c2190dc9ce3c7ea7192beaa000e04582
   }
-
   if (user) {
-    return <Redirect to="/createProject" />;
+    return <Redirect to="/createOrganization" />;
   }
   return (
     <div className="Container">
       <Row className="row">
         {/* Img Tag */}
         <Col className="col-5 col1 LeftSide">
-          <img src={AppLogo} className="AppLogoAuth" />
-          <img className="LeftSidePic" src={AuthBackPic} />
+          <img src={AppLogo} className="AppLogoAuth" alt="background" />
+          <img className="LeftSidePic" src={AuthBackPic} alt="back" />
           <div className="copyRightText">&copy;2021, Made by Dream Lab. </div>
         </Col>
         {/* Auth Routing  */}

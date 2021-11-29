@@ -1,62 +1,36 @@
 .App {
-  background-color: #ffffff;
+  background-color: #282c34;
   min-height: 100vh;
-  flex-direction: row;
+  text-align: center;
+  justify-content: center;
   display: flex;
 
 }
 
-.App-Left {
-  margin-top: 3rem;
-  display: block;
-  flex: 70%;
- }
-.App-Right {
-  margin-top: 3rem;
-
- }
-
 .main-heading-dev{
   margin-bottom: 10px;
-
 }
 .Heading-Dev{
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 
 .main-heading{
   margin-bottom: 3.2rem;
-  font-family: Manrope;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 55px;
-  margin-left: 2rem;
-  color: #000000;
-}
-
-.main-Line{
-  margin-left: 2.5rem;
+  font-size: 50px;
+  color: #fff;
 }
 .main-heading-text{
   font-size: 20px;
   color: #fff;
 }
-.main-smallHeading{
-  margin-bottom: 3.2rem;
-  margin-left: 2rem;
-  font-family: Manrope;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 25px;
-  color: #7A86A1;
+
+
+.App-header {
+ margin-top: 3rem;
 }
-
-
 
 .Select-Div{
    height: 70px;
@@ -89,10 +63,5 @@
    border-style: solid;
    margin:1rem;
    border-radius: 1rem;
-}
-
-.main-left-pic{
-  height: 43rem;
-  width: 28rem;
 }
 

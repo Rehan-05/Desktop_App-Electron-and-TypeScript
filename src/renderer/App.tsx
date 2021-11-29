@@ -9,6 +9,7 @@ import {
 import { AUTH } from 'Types/User.types';
 import './App.css';
 import Auth from './View/Authentication/Auth';
+import CreateOrganization from './View/CreateOrganization/createOrganization';
 import CreateProject from './View/createProject/createProject';
 require('react-web-vector-icons/fonts');
 
@@ -38,6 +39,9 @@ export default function App() {
         </Route>
         <AuthRoute path="/createProject">
           <CreateProject />
+        </AuthRoute>
+        <AuthRoute path="/createOrganization">
+          <CreateOrganization />
         </AuthRoute>
       </Switch>
     </Router>
