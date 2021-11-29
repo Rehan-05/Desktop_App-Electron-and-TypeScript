@@ -1,0 +1,169 @@
+.App {
+  background-color: #ffff;
+  min-height: 100vh;
+  flex-direction: row;
+  float: left;
+}
+
+.App-Left {
+  width: 45rem;
+  // background-color: #717D7E;
+ }
+
+.App-Right{
+  width: 55rem;
+  // background-color: green;
+  display: none;
+}
+
+@media only screen and (min-width: 870px) {
+  .App-Right {
+    display: block;
+  }
+}
+
+
+.Heading-Dev{
+  margin-top: 2rem;
+  width:30rem;
+}
+
+.main-heading1{
+  width:30rem;
+  margin-bottom: 1rem;
+}
+
+.main-heading{
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 55px;
+  color: #000000;
+}
+
+.main-Line1{
+  width:10rem;
+}
+
+.main-heading-text{
+  font-size: 20px;
+  color: #fff;
+}
+
+.main-smallHeading1{
+  width:25rem;
+
+}
+
+.main-smallHeading{
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 25px;
+  color: #7A86A1;
+}
+
+
+
+.Select-Div{
+   height: 70px;
+   display: flex;
+  flex-direction: row;
+}
+
+.Select-Div-Heading {
+
+  margin-top: 25px;
+  margin-top: 3rem;
+
+}
+
+.Card-Style{
+   height:8rem;
+   width:8rem;
+   border-color: #717D7E;
+   border-width: 0.5;
+   border-style: dashed;
+   margin:1rem;
+   border-radius: 1rem;
+}
+
+.Card-Style1{
+  height:8rem;
+   width:8rem;
+   border-color: #717D7E;
+   border-width: 0.5;
+   border-style: solid;
+   margin:1rem;
+   border-radius: 1rem;
+}
+
+.main-Right{
+  width: 50rem;
+}
+.main-Right-pic{
+  height: 45rem;
+  width: 50rem;
+}
+
+
+.LabelStyle{
+  width:15rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.LabelStyle2{
+  width:18rem;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+.LabelStyle3{
+  width:13rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.input_Style{
+  height:40px;
+  margin-Right:21rem;
+  border: 1px solid #EBEBEB;
+  border-radius:20px;
+  width: 44%;
+  padding-left: 20px;
+  font-family:Manrope;
+
+}
+
+.input_Style1{
+  height:80px;
+  margin-Right:21rem;
+  border: 1px solid #EBEBEB;
+  border-radius:22.5px;
+  width: 44%;
+  padding-left: 20px;
+  font-family:Manrope;
+}
+
+.input_Style3{
+  height:40px;
+  margin-Right:21rem;
+  border: 1px solid #EBEBEB;
+  border-radius:20px;
+  width: 44%;
+  padding-left: 18px;
+  padding-top:5.5px;
+  padding-bottom: 5px;
+  font-family:Manrope;
+}
+
+.button-Style{
+  width:25rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+
