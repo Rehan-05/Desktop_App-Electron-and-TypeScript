@@ -1,112 +1,127 @@
-import react from 'react';
 import './createOrganization.scss';
 import { CardActionArea } from '@mui/material';
 import { Mark,line } from '../../Constant/Images';
-// import { Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 // import Button from 'renderer/Components/Button';
-// import InputButton from 'renderer/Components/InputButton';
-// import { useForm ,SubmitHandler} from "react-hook-form";
-// import {IFormInput,
-//   AUTH
-// } from '../../../Types/User.types';
+import InputButton from 'renderer/Components/InputButton';
+import { useForm ,SubmitHandler} from "react-hook-form";
+import {IFormInput,
+  AUTH
+} from '../../../Types/User.types';
+import React from 'react';
 
 
 function App() {
-  // const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
+  const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
+  const { register,formState: { errors }, handleSubmit }=useForm<IFormInput>({criteriaMode:'all'});
+  const onSubmit: SubmitHandler<IFormInput> = (Data) => {
+  //   debugger
+  //  dispatch(signin(Data))
+     console.log(Data);
+  };
   return (
     <div className="App">
        <div className="App-Left">
-           {/* Headind Div */}
 
+             {/* Headind Div */}
             <div className="Heading-Dev">
-                <div className="main-heading-dev"> <text className="main-heading">Create a new project </text></div>
-                <div className="main-heading-dev"> <img className="main-Line" src={line} alt="Line" /></div>
-                <div className="main-heading-dev"> <text className="main-smallHeading">Please Enter your Organization Detail </text></div>
+                <div className="main-heading1"> <text className="main-heading">Create a new project </text></div>
+                <div className="main-Line1"> <img className="main-Line" src={line} alt="Line" /></div>
+                <div className="main-smallHeading1"> <text className="main-smallHeading">Please Enter your Organization Detail </text></div>
             </div>
 
-          {/* Select Project Div */}
+            {/*Select Project Div */}
+            <div className="Select-Project-Div">
 
-          {/* <form onSubmit={handleSubmit(onSubmit)}>
-          <Row style={{ marginTop: 10 }}>
-              <Col className="LabelInput">UserName</Col>
-              <Col className="LabelInput">Password</Col>
-            </Row>
+              <form onSubmit={handleSubmit(onSubmit)}>
 
-            <Row style={{ marginTop: 10 }}>
-              <Col>
-                <input type="text" id="email" className="inputStyle"
-                onFocus={()=>SetErrorMessage('')}
-                {...register("userName", {
-                  required: "This input is required.",
-                  pattern: {
-                    value: /\w+/,
-                    message: "UserName contain alphabate and numbers only."
-                  }
-                })}
-                />
-              </Col>
-                <Col>
-                  <input type="password"  id="Password" className="inputStyle"
-                  onFocus={()=>SetErrorMessage('')}
-                  {...register("Password",
-                  {
-                    required: "This input is required.",
-                    pattern: {
-                      value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
-                      message: "Password contain 1 alphabate and 1 numbers and minimum 8 Charcter."
-                    }
-                  }
-                  )}
-                  />
-                </Col>
-              </Row>
+      {/* *********1st field**********/}
+                <Row className="LabelStyle">
+                    <Col className="LabelInput">Organization Name</Col>
+                </Row>
 
-              <div style={{color:'red',fontSize:14,fontFamily:'Manrope',marginTop:5}}>
-                {ErrorMessage}
-              </div>
+                <Row>
+                    <Col>
+                      <input type="text" id="email" className="input_Style" placeholder=" @xyz"
+                        onFocus={()=>SetErrorMessage('')}
+                        {...register("userName", {
+                          required: "This input is required.",
+                          pattern: {
+                            value: /\w+/,
+                            message: "UserName contain alphabate and numbers only.",
 
-        <div style={{ alignItems: 'center', display: 'flex', marginTop: 25 }}>
-            <input
-              className="CheckBox mr-1"
-              type="checkbox"
-              {...register("rememberme")}
-              id="flexCheckDefault"
-            />
-              <label
-                className="form-check-label ml-1"
-                style={{ marginLeft: 10, fontSize: 14, color: '#7A86A1',fontFamily:'Manrope' }}
-                htmlFor="flexCheckDefault"
-              >
-            Remember me
-              </label>
-              <Link
-                to="/ForgotPassword"
-                className="ml-1 RegisterLink"
-                style={{ marginLeft: 10 }}
-              >
-              Forgot password?
-            </Link>
-              </div>
+                          }
+
+                      })}
+                      />
+                    </Col>
+                  </Row>
+
+      {/**********2nd field**********/}
+                  <Row className="LabelStyle2">
+                    <Col className="LabelInput">Organization Description</Col>
+                </Row>
+
+                <Row style={{ marginTop: 5 }}>
+                    <Col>
+                      <input type="text" id="email" className="input_Style1" placeholder="Des..."
+                        onFocus={()=>SetErrorMessage('')}
+                        {...register("userName", {
+                          required: "This input is required.",
+                          pattern: {
+                            value: /\w+/,
+                            message: "UserName contain alphabate and numbers only."
+                          }
+                      })}
+                      />
+                    </Col>
+                  </Row>
+
+       {/**********3rd field**********/}
+               <Row className="LabelStyle3">
+                    <Col className="LabelInput">Upload Logo</Col>
+                </Row>
+
+                <Row style={{ marginTop: 5 }}>
+                    <Col>
+                      <input type="file" id="email" className="input_Style3 btn-s"  placeholder="Des..."
+                        onFocus={()=>SetErrorMessage('')}
+                        {...register("userName", {
+                          required: "This input is required.",
+                          pattern: {
+                            value: /\w+/,
+                            message: "UserName contain alphabate and numbers only."
+                          }
+                      })}
+                      />
+                    </Col>
+                  </Row>
+               </form>
+
+            </div>
+             <div className="button-Style">
               <InputButton
+                  buttonStyle={{
+                    backgroundImage: ` linear-gradient(to right, #0905AF 0%, #0905AF 47%, #0905AF 100%)`,
+                    boxShadow: `3.994px 22.651px 57px rgba(97, 73, 205, 0.259)`,
+                    color: '#FFFFFF',
+                    width:300,marginTop:30
+                  }}
+                  title=" Create"
+                />
+             </div>
 
-                buttonStyle={{
-                  backgroundImage: ` linear-gradient(to right, #B543F1 0%, #BF3EC9 47%, #EE4086 100%)`,
-                  boxShadow: `3.994px 22.651px 57px rgba(97, 73, 205, 0.259)`,
-                  color: '#FFFFFF',
-                  width:300,marginTop:30
-                }}
-                title=" Sign In"
-
-              />
-            </form> */}
+             {/* <div className="Account-Name">
+                <text className="Already-Account">Already Have an Organization </text>
+             </div> */}
 
 
         </div>
 
 
-        <div>
-          <div > <img className="main-left-pic" src={Mark} alt="Mark" /></div>
+        <div className="App-Right">
+          <div className="main-Right"> <img className="main-Right-pic" src={Mark} alt="Mark" /></div>
         </div>
     </div>
   );
