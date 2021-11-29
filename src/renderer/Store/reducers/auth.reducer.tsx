@@ -28,7 +28,7 @@ function CreateAuthReucers() {
       case 'AUTH_ON_INIT':
       case "AUTH_LOGOUT_SUCCESS":
         return null;
-      case 'AUTH_REGISTER_SUCCESS':
+      // case 'AUTH_REGISTER_SUCCESS':
       case 'AUTH_LOGIN_SUCCESS':
       case 'AUTH_ON_SUCCESS':
         return user;

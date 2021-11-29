@@ -51,8 +51,8 @@ export default function SignIn() {
 
         <Button
         icon={true}
-          iconName="social-google"
-          font="SimpleLineIcons"
+          iconName="google"
+          font="MaterialCommunityIcons"
           className="CusomtButtonTitle"
           // onClick={()=>console.log(error)}
           buttonStyle={{
@@ -71,8 +71,9 @@ export default function SignIn() {
             borderStyle: 'solid',
             borderColor: '#EBEBEB',
           }}
-          iconName="facebook"
-          font="Feather"
+          size={20}
+          iconName="sc-facebook"
+          font="EvilIcons"
           className="CusomtButtonTitle"
           title=" Sign with Facebook"
         />

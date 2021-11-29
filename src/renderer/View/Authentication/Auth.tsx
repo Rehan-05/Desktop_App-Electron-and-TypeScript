@@ -15,6 +15,7 @@ import { AUTH } from 'Types/User.types';
 import Loader from 'renderer/Components/Loader';
 
 export default function Auth() {
+<<<<<<< HEAD
   const user = useSelector(({ auth }: AUTH) => {
     return auth.user;
   });
@@ -31,6 +32,16 @@ export default function Auth() {
         <Loader />
       </div>
     );
+=======
+  const user=useSelector(({auth}:AUTH)=>{ return auth.user})
+  const isChecking=useSelector(({auth}:AUTH)=>{return (auth.login?.isChecking)})
+  const isCheckingR=useSelector(({auth}:AUTH)=>{return (auth.register?.isChecking)})
+
+  if(isChecking||isCheckingR) {
+    return (<div className="Container">
+      <Loader />
+    </div>)
+>>>>>>> 32b2eca9c2190dc9ce3c7ea7192beaa000e04582
   }
 
   if (user) {
