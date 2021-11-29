@@ -8,7 +8,7 @@ const signin=(Data:IFormInput)=> (dispatch: any)=>{
     username: Data.userName,
     password: Data.Password,
   }).then(data=>{
-
+    debugger
     dispatch({type:"AUTH_LOGIN_SUCCESS",user:{...data.data,status:data.status,isLoggedIn: true, }})
     localStorage.setItem('User',JSON.stringify({...data.data,status:data.status,isLoggedIn: true, }))
     return data;
@@ -23,6 +23,7 @@ const signin=(Data:IFormInput)=> (dispatch: any)=>{
 }
 
 const register=(Data:IFormInput)=> (dispatch: any)=>{
+
   dispatch({type:"AUTH_REGISTER_INIT"})
 
    getData.Register({
@@ -32,7 +33,7 @@ const register=(Data:IFormInput)=> (dispatch: any)=>{
     name:Data.name
   }).then(data=>{
     debugger
-
+    dispatch({type:"AUTH_REGISTER_SUCCESS"})
     dispatch(signin(Data))
     return data;
   })

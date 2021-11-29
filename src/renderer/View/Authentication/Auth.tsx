@@ -1,54 +1,56 @@
 // import path from 'path';
 import { Col, Row } from 'react-bootstrap';
 
-import { Route,MemoryRouter as Router,Switch, Redirect } from 'react-router-dom'
-import { AppLogo,AuthBackPic } from '../../Constant/Images';
-import { Register, SignIn, ForgotPassword } from '.';
+import {
+  Route,
+  MemoryRouter as Router,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
+import { AppLogo, AuthBackPic } from '../../Constant/Images';
+import { Register, SignIn, ForgotPassword } from './';
 import React from 'react';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { AUTH } from 'Types/User.types';
 import Loader from 'renderer/Components/Loader';
 
-
-
 export default function Auth() {
-  const user=useSelector(({auth}:AUTH)=>{ return auth.user})
-  const isChecking=useSelector(({auth}:AUTH)=>{return (auth.login?.isChecking||auth.register?.isChecking)})
+  const user = useSelector(({ auth }: AUTH) => {
+    return auth.user;
+  });
+  const isChecking = useSelector(({ auth }: AUTH) => {
+    return auth.login?.isChecking;
+  });
+  const isCheckingR = useSelector(({ auth }: AUTH) => {
+    return auth.register?.isChecking;
+  });
 
-  React.useEffect(()=>{
-
-
-    console.log("error" +isChecking)
-
-  },[isChecking])
-  if(isChecking) {
-    return (<div className="Container">
-      <Loader />
-    </div>)
+  if (isChecking || isCheckingR) {
+    return (
+      <div className="Container">
+        <Loader />
+      </div>
+    );
   }
-
-  if(user)
-  {
-    return (<Redirect to="/createProject" />)
+  if (user) {
+    return <Redirect to="/createOrganization" />;
   }
   return (
     <div className="Container">
-
       <Row className="row">
         {/* Img Tag */}
-        <Col  className="col-5 col1 LeftSide"  >
-          <img src={AppLogo} className="AppLogoAuth" />
-          <img className="LeftSidePic" src={AuthBackPic}  />
+        <Col className="col-5 col1 LeftSide">
+          <img src={AppLogo} className="AppLogoAuth" alt="background" />
+          <img className="LeftSidePic" src={AuthBackPic} alt="back" />
           <div className="copyRightText">&copy;2021, Made by Dream Lab. </div>
         </Col>
         {/* Auth Routing  */}
-        <Col  className="col col1 right-col"  >
+        <Col className="col col1 right-col">
           <Router>
             <Switch>
-              <Route component={SignIn} path="/" exact  />
-              <Route component={Register} path="/Register"  />
+              <Route component={SignIn} path="/" exact />
+              <Route component={Register} path="/Register" />
               <Route component={ForgotPassword} path="/ForgotPassword" />
-
             </Switch>
           </Router>
         </Col>
