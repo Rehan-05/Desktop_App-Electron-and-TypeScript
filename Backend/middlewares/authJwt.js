@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const config = require("../config/auth.config.js");
 const db = require("../model");
-const User = db.user;
+const {User} = db.user;
 const Role = db.role;
 
 verifyToken = (req, res, next) => {
@@ -9,8 +9,8 @@ verifyToken = (req, res, next) => {
     "Access-Control-Allow-Headers",
     "*"
   );
-  let token = req.headers["x-access-token"];
-
+  let token = req.headers["authorization"];
+  console.log(token)
   if (!token) {
     return res.status(403).send({ message: "No token provided!" });
   }
@@ -20,6 +20,7 @@ verifyToken = (req, res, next) => {
       return res.status(401).send({ message: "Unauthorized!" });
     }
     req.userId = decoded.id;
+    console.log("pass1")
     next();
   });
 };
@@ -40,6 +41,7 @@ isAdmin = (req, res, next) => {
         _id: { $in: user.roles }
       },
       (err, roles) => {
+        console.log(roles)
         if (err) {
           res.status(500).send({ message: err });
           return;
@@ -47,6 +49,7 @@ isAdmin = (req, res, next) => {
 
         for (let i = 0; i < roles.length; i++) {
           if (roles[i].name === "admin") {
+            console.log("pass2")
             next();
             return;
           }
