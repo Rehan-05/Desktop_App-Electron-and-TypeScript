@@ -5,6 +5,7 @@ import { Col, Row } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 // import Button from 'renderer/Components/Button';
 import InputButton from 'renderer/Components/InputButton';
+import {useHistory} from 'react-router-dom';
 import { useForm ,Controller,SubmitHandler} from "react-hook-form";
 import {IFormInput,
   AUTH
@@ -13,6 +14,7 @@ import React from 'react';
 
 
 function App() {
+  const history = useHistory();
   const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
   const { register,formState: { errors }, handleSubmit }=useForm<IFormInput>({criteriaMode:'all'});
   const onSubmit: SubmitHandler<IFormInput> = (Data) => {
@@ -103,6 +105,7 @@ function App() {
 
              <div className="button-Style">
               <InputButton
+              onClick={()=>{history.push('/dashboard')}}
                   className="Create-Button"
                   buttonStyle={{
                     backgroundImage: ` linear-gradient(to right, #0905AF 0%, #0905AF 47%, #0905AF 100%)`,

@@ -43,6 +43,9 @@ export default function App() {
         <AuthRoute path="/createOrganization">
           <CreateOrganization />
         </AuthRoute>
+        <AuthRoute path="/dashboard">
+          <CreateProject />
+        </AuthRoute>
       </Switch>
     </Router>
   );

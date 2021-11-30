@@ -20,14 +20,14 @@ Logout
   )
 }
 
-// import './createProject.scss';
+
 // import { CardActionArea } from '@mui/material';
 // import { IoIosAdd } from "react-icons/io";
 // import { IoMdRocket } from "react-icons/io";
 // import { BsFillFileEarmarkTextFill } from "react-icons/bs";
 
 
-// function App() {
+// function CreateProject() {
 //   return (
 //     <div className="App">
 //        <div className="App-header">
@@ -81,4 +81,4 @@ Logout
 //   );
 // }
 
-// export default App;
+// export default CreateProject;

@@ -4,21 +4,11 @@
  */
 @import './View/Authentication/authStyles.scss';
 @import 'bootstrap/dist/css/bootstrap.min.css';
-@import './Components/LoaderStyle.scss';
+@import './Components/Loader/LoaderStyle.scss';
 @import './View/CreateOrganization/createOrganization.scss';
 @import './View/createProject/createProject.scss';
+@import './Style/index.scss';
 
-body,
-html {
-  background-color: #FFFFFF;
-  height: 100%;
-  font-family: sans-serif;
-    overflow-y: hidden;
-    overflow-x: hidden;
-  display: block;
-  margin: 0px;
-  padding: 0px;
-}
 
 @font-face {
   font-family: Manrope;

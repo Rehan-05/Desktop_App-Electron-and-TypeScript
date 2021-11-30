@@ -1,0 +1,49 @@
+
+
+
+.CheckBox{
+  border: 1px solid #C0BDCC;
+  height:20px;
+  width:20px;
+}
+
+.LabelInput{
+  font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 20px;
+color: #000000;
+font-family:Manrope;
+}
+
+.inputStyle{
+  height:40px;
+  border: 1px solid #EBEBEB;
+  border-radius:15px;
+  width: 95%;
+  padding-left: 10px;
+  font-family:Manrope;
+
+}
+.inputStyle::placeholder{
+  font-family: Manrope;
+font-style: normal;
+font-weight: 800;
+font-size: 14px;
+line-height: 19px;
+
+color: #7A86A1;
+}
+.row ,.col{
+  margin:0px;
+  padding:0px;
+}
+
+.form-heading{
+  font-style: normal;
+font-weight: 800;
+font-size: 25px;
+line-height: 41px;
+color: $black;
+font-family: Manrope;
+}

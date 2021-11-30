@@ -4,9 +4,11 @@ export default function InputButton({
   title = ' Sign with Google',
   type = 'submit',
   disabled=false,
+  onClick=()=>{},
 }: TagType) {
   return (
     <input
+    onClick={onClick}
       type={type}
       disabled={disabled}
       className={`btn ButtonStyle ${className}`}
@@ -21,6 +23,7 @@ interface TagType {
   buttonStyle?: any;
   className?: string;
   title?: string;
-  disabled?:boolean,
+  disabled?:boolean;
   type?: string;
+  onClick?:()=>void;
 }
