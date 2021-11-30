@@ -16,6 +16,7 @@ This document is a guide the common styling for layout, Button , Form and Text.
 ## css styles for forms
   
   ### 1. `CheckBox` , `LabelInput` , `inputStyle` , `form-heading`  [form.scss] file
+
 `CheckBox` used to style check boxes auth screen check box,
 `LabelInput` used to style label of inputs example auth sreen form
 `inputStyle` used to style input style.
