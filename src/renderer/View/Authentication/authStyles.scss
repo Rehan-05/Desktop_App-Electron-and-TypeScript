@@ -1,189 +1,193 @@
-$white:#FFFFFF;
-$black:#000000;
-$main:#BF3EC9;
-$gray:#EBEBEB;
+  $white: #FFFFFF;
+  $black: #000000;
+  $main: #BF3EC9;
+  $gray: #EBEBEB;
 
 
 
-.Container {
-  height: 100%;
-  width: 100%;
-}
-.row {
-  width: 100%;
-  margin: 0px;
-  padding:0px;
-}
-
-.col1 {
-  height: 100%;
-
-  margin: 0px;
-  padding:0px;
-
-}
-
-.LeftSide {
-  display: none;
-  // width: 90%;
-
-
-}
-
-.LeftSidePic {
-  height: 100vh;
-  // width: 100%;
-}
-
-.AppLogoAuth{
-  height:100px;
-  width: 70px;
-  position:absolute;
-  top:50px;
-  left:50px;
-
-}
-.copyRightText{
-  position:absolute;
-  bottom:50px;
-  left:50px;
-  color: $main;
-  justify-content: center;
-  align-items: center;
-  font-family: Manrope;
-}
-.right-col{
-  height: 100vh;
-
-}
-
-@media only screen and (min-width: 1150px) {
-  .LeftSide {
-    display: block;
+  .Container {
+    height: 100%;
+    width: 100%;
   }
-}
+  .row {
+    width: 100%;
+    margin: 0px;
+    padding:0px;
+  }
+
+  .col1 {
+    height: 100%;
+
+    margin: 0px;
+    padding:0px;
+
+  }
+
+  .LeftSide {
+    display: none;
+    // width: 90%;
+
+
+  }
+
+  .LeftSidePic {
+    height: 100vh;
+    // width: 100%;
+  }
+
+  .RightSidePic {
+    height: 100vh;
+    width: 100%;
+  }
+  .AppLogoAuth{
+    height:100px;
+    width: 70px;
+    position:absolute;
+    top:50px;
+    left:50px;
+
+  }
+  .copyRightText{
+    position:absolute;
+    bottom:50px;
+    left:50px;
+    color: $main;
+    justify-content: center;
+    align-items: center;
+    font-family: Manrope;
+  }
+  .right-col{
+    height: 100vh;
+
+  }
+
+  @media only screen and (min-width: 1150px) {
+    .LeftSide {
+      display: block;
+    }
+  }
 
 
 
-// Sign Button Styles
+  // Sign Button Styles
 
 
-.RegisterTag{
-  position:absolute;
-  top:30px;
-  right:20px;
-  font-size:12px;
-  align-items: center;
+  .RegisterTag{
+    position:absolute;
+    top:30px;
+    right:20px;
+    font-size:12px;
+    align-items: center;
+    font-family: Manrope;
+
+  }
+
+  .RegisterLink{
+    text-decoration: none;
+    color:$main;
+    font-size: 14px;
+    font-family: Manrope;
+
+  }
+  .RegisterLink:hover{
+    font-size: 16px;
+    color:$main;
+
+  }
+
+  .btnCircle{
+    height: 30px;
+    width: 30px;
+    border-radius:50%;
+    border: 1px solid $gray;
+    justify-content:center;
+    align-items:center;
+    background-color:$white;
+    margin-left:10px;
+  }
+
+  .btnCircle:hover{
+    border: 1px solid $main;
+    background-color:$main;
+  }
+  // Need to set
+  .AuthContainer{
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .SignText{
+    font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 41px;
+  color: $black;
   font-family: Manrope;
+  }
+  .ButtonStyle{
+    border-radius: 15px;
+    border-style: none;
+    // background-Image: linear-gradient(to right, #F9B035 0%, #F98C4E 53%, #F96767 100%);
+    padding:1px 30px 1px 30px;
+    margin:10px 10px 10px 0px;
+    height:40px;
+  }
+  .CusomtButtonTitle{
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+  }
 
-}
-
-.RegisterLink{
-  text-decoration: none;
-  color:$main;
+  .textgray{
+    font-family: Manrope;
+  font-style: normal;
+  font-weight: 800;
   font-size: 14px;
-  font-family: Manrope;
+  line-height: 19px;
+  color: #7A86A1;
+  margin-top:30px;
+  }
+  .CheckBox{
+    border: 1px solid #C0BDCC;
+    height:20px;
+    width:20px;
+  }
 
-}
-.RegisterLink:hover{
-  font-size: 16px;
-  color:$main;
-
-}
-
-.btnCircle{
-  height: 30px;
-  width: 30px;
-  border-radius:50%;
-  border: 1px solid $gray;
-  justify-content:center;
-  align-items:center;
-  background-color:$white;
-  margin-left:10px;
-}
-
-.btnCircle:hover{
-  border: 1px solid $main;
-  background-color:$main;
-}
-// Need to set
-.AuthContainer{
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-}
-
-.SignText{
-  font-style: normal;
-font-weight: 800;
-font-size: 25px;
-line-height: 41px;
-color: $black;
-font-family: Manrope;
-}
-.ButtonStyle{
-  border-radius: 15px;
-  border-style: none;
-  // background-Image: linear-gradient(to right, #F9B035 0%, #F98C4E 53%, #F96767 100%);
-  padding:1px 30px 1px 30px;
-  margin:10px 10px 10px 0px;
-  height:40px;
-}
-.CusomtButtonTitle{
-  font-family: Manrope;
-  font-style: normal;
+  .LabelInput{
+    font-style: normal;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 22px;
-}
-
-.textgray{
-  font-family: Manrope;
-font-style: normal;
-font-weight: 800;
-font-size: 14px;
-line-height: 19px;
-color: #7A86A1;
-margin-top:30px;
-}
-.CheckBox{
-  border: 1px solid #C0BDCC;
-  height:20px;
-  width:20px;
-}
-
-.LabelInput{
-  font-style: normal;
-font-weight: bold;
-font-size: 15px;
-line-height: 20px;
-color: #000000;
-font-family:Manrope;
-}
-
-.inputStyle{
-  height:40px;
-  border: 1px solid #EBEBEB;
-  border-radius:15px;
-  width: 95%;
-  padding-left: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  color: #000000;
   font-family:Manrope;
+  }
 
-}
-.inputStyle::placeholder{
-  font-family: Manrope;
-font-style: normal;
-font-weight: 800;
-font-size: 14px;
-line-height: 19px;
+  .inputStyle{
+    height:40px;
+    border: 1px solid #EBEBEB;
+    border-radius:15px;
+    width: 95%;
+    padding-left: 10px;
+    font-family:Manrope;
 
-color: #7A86A1;
-}
-.row ,.col{
-  margin:0px;
-  padding:0px;
-}
+  }
+  .inputStyle::placeholder{
+    font-family: Manrope;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 19px;
+
+  color: #7A86A1;
+  }
+  .row ,.col{
+    margin:0px;
+    padding:0px;
+  }
 
 
