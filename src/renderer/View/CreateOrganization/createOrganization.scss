@@ -16,7 +16,7 @@
   display: none;
 }
 
-@media only screen and (min-width: 870px) {
+@media only screen and (min-width: 1000px) {
   .App-Right {
     display: block;
   }
@@ -108,6 +108,9 @@
 .main-Right-pic{
   height: 45rem;
   width: 32rem;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
 }
 
 .Select-Project-Div{
@@ -183,6 +186,7 @@ input[type=file]::file-selector-button:hover {
   width:33rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  margin-left: 4rem;
 }
 
 .Create-Button:hover {

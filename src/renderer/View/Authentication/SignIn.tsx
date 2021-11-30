@@ -46,7 +46,7 @@ export default function SignIn() {
       {/* Cretae Accoutn Tag */}
       <NeedAccount />
       <div>
-        <div className="SignText">Sign In</div>
+        <div className="form-heading">Sign In</div>
 
         <Button
         icon={true}

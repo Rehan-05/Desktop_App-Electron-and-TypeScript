@@ -1,0 +1,40 @@
+@import './color.scss';
+.RegisterTag{
+  position:absolute;
+  top:30px;
+  right:20px;
+  font-size:12px;
+  align-items: center;
+  font-family: Manrope;
+
+}
+
+.RegisterLink{
+  text-decoration: none;
+  color:$main;
+  font-size: 14px;
+  font-family: Manrope;
+
+}
+.RegisterLink:hover{
+  font-size: 16px;
+  color:$main;
+
+}
+
+.btnCircle{
+  height: 30px;
+  width: 30px;
+  border-radius:50%;
+  border: 1px solid $gray;
+  justify-content:center;
+  align-items:center;
+  background-color:$white;
+  margin-left:10px;
+}
+
+.btnCircle:hover{
+  border: 1px solid $main;
+  background-color:$main;
+}
+

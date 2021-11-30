@@ -53,7 +53,7 @@ export default function Register() {
       text2 = ' Sign In'
       />
       <div>
-        <div className="SignText">Create Your Account</div>
+        <div className="form-heading">Create Your Account</div>
 
         <Button
         icon={true}

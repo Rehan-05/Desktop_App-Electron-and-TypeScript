@@ -1,0 +1,17 @@
+@import './forms.scss';
+@import './button.scss';
+@import './layout.scss';
+@import './c_need_account.scss';
+@import './color.scss';
+
+body,
+html {
+  background-color: white;
+  height: 100%;
+  font-family: sans-serif;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
