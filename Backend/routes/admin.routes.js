@@ -12,7 +12,9 @@ module.exports = function(app) {
 
 
 
+
   app.post("/api/createOrganization", [authJwt.verifyToken,authJwt.isAdmin], CreateOrganization);
+
 
   // app.get(
   //   "/api/test/mod",

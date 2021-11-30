@@ -5,7 +5,7 @@ import { Col, Row } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 // import Button from 'renderer/Components/Button';
 import InputButton from 'renderer/Components/InputButton';
-import { useForm ,SubmitHandler} from "react-hook-form";
+import { useForm ,Controller,SubmitHandler} from "react-hook-form";
 import {IFormInput,
   AUTH
 } from '../../../Types/User.types';
@@ -85,7 +85,7 @@ function App() {
 
                 <Row style={{ marginTop: 5 }}>
                     <Col>
-                      <input type="file" id="email" className="input_Style3 btn-s"  placeholder="Des..."
+                      <input type="file" id="email" className="input_Style3"  placeholder="Des..."
                         onFocus={()=>SetErrorMessage('')}
                         {...register("userName", {
                           required: "This input is required.",
@@ -100,8 +100,10 @@ function App() {
                </form>
 
             </div>
+
              <div className="button-Style">
               <InputButton
+                  className="Create-Button"
                   buttonStyle={{
                     backgroundImage: ` linear-gradient(to right, #0905AF 0%, #0905AF 47%, #0905AF 100%)`,
                     boxShadow: `3.994px 22.651px 57px rgba(97, 73, 205, 0.259)`,
