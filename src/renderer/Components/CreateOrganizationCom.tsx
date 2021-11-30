@@ -10,6 +10,9 @@ import {IFormInput,
   AUTH
 } from '../../Types/User.types';
 import React from 'react';
+import CreateOrg from 'renderer/Api/auth.api';
+import { useSelector } from 'react-redux';
+
 
 function CreateOrgCom() {
   const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
@@ -19,15 +22,36 @@ function CreateOrgCom() {
   //  dispatch(signin(Data))
      console.log(Data);
   };
+  const User = useSelector(({auth}:AUTH) => auth.user);
+  const Check = (token:string)=>{
+    debugger
+
+    let data = {
+      "organizationName":"Dream Code",
+      "description":"It Company",
+
+      "logo":"anythong",
+      "address":"Islambad",
+      "owoner":"Pakistan"
+  }
+  CreateOrg.createOrganizationApi(data,token)
+  .then(res=>{
+    console.log(res);
+
+  })
+  .catch(err=>{
+console.log(err);
+  })
+  }
   return (
     <div className="App">
        <div className="App-Left">
 
              {/* Headind Div */}
             <div className="Heading-Dev">
-                <div className="main-heading1"> <text className="main-heading">Create a new project </text></div>
+                <div className="main-heading1"> <div className="main-heading">Create a new project </div></div>
                 <div className="main-Line1"> <img className="main-Line" src={line} alt="Line" /></div>
-                <div className="main-smallHeading1"> <text className="main-smallHeading">Please Enter your Organization Detail </text></div>
+                <div className="main-smallHeading1"> <div className="main-smallHeading">Please Enter your Organization Detail </div></div>
             </div>
 
             {/*Select Project Div */}
@@ -101,6 +125,7 @@ function CreateOrgCom() {
                {/**********Buttom Field**********/}
                 <div className="button-Style">
                   <InputButton
+                  onClick={()=>Check(User.accessToken)}
                       className="Create-Button"
                       buttonStyle={{
                         backgroundImage: ` linear-gradient(to right, #0905AF 0%, #0905AF 47%, #0905AF 100%)`,

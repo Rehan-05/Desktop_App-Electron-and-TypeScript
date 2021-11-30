@@ -10,18 +10,10 @@ import {
 import { Mark,line } from '../../Constant/Images';
 import { Col, Row } from 'react-bootstrap';
 import CreateOrganizationCom from '../../../../src/renderer/Components/CreateOrganizationCom';
-// import { Link } from 'react-router-dom';
-// import Button from 'renderer/Components/Button';
-import InputButton from 'renderer/Components/InputButton';
-import {useHistory} from 'react-router-dom';
-import { useForm ,Controller,SubmitHandler} from "react-hook-form";
-import {IFormInput,
-  AUTH
-} from '../../../Types/User.types';
-
 
 
 function App() {
+
 
   return (
         <div className="Container">
