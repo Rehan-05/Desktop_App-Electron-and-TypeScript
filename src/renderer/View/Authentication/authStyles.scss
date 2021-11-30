@@ -1,3 +1,7 @@
+
+
+
+
 @import "./../../Style/color.scss";
 
 
@@ -32,11 +36,14 @@
 }
 
 
-@media only screen and (min-width: 1150px) {
+
   .LeftSide {
-    display: block;
+    display: none;
+    // width: 90%;
+
+
   }
-}
+
 .textgray{
   font-family: Manrope;
 font-style: normal;
@@ -54,5 +61,7 @@ margin-top:30px;
   line-height: 22px;
 }
 
-
-
+.RightSidePic {
+  height: 100vh;
+  width: 100%;
+}

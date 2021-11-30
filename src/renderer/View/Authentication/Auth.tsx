@@ -1,6 +1,5 @@
 // import path from 'path';
 import { Col, Row } from 'react-bootstrap';
-
 import {
   Route,
   MemoryRouter as Router,

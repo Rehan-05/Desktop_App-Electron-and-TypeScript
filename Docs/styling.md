@@ -3,7 +3,7 @@ This document is a guide the common styling for layout, Button , Form and Text.
 
 
 ## css Color
-    All the main colors are lisisted in Main Color file, you can include imort color into your css file and use it;
+    All the main colors are listed in Main Color file, you can include import color into your css file and use it;
 
 ## css classes custom component
   ### 1. `ButtonStyle` 
@@ -17,10 +17,12 @@ This document is a guide the common styling for layout, Button , Form and Text.
   
   ### 1. `CheckBox` , `LabelInput` , `inputStyle` , `form-heading`  [form.scss] file
 
+
 `CheckBox` used to style check boxes auth screen check box,
 `LabelInput` used to style label of inputs example auth sreen form
 `inputStyle` used to style input style.
 `form-heading` used to style form heading
+
 
 
 ## Css for Layouts
@@ -49,6 +51,7 @@ This document is a guide the common styling for layout, Button , Form and Text.
 
 ### CreateOrganization 
 
+   ''
 
 
 
