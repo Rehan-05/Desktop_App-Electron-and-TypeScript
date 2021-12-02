@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 import { Mark,line } from '../../Constant/Images';
 import { Col, Row } from 'react-bootstrap';
-import CreateOrganizationCom from '../../../../src/renderer/Components/CreateOrganizationCom';
+import CreateOrganizationCom from 'renderer/View/CreateOrganization/CreateOrganizationCom';
 // import { Link } from 'react-router-dom';
 // import Button from 'renderer/Components/Button';
 import InputButton from 'renderer/Components/InputButton';
@@ -18,6 +18,7 @@ import { useForm ,Controller,SubmitHandler} from "react-hook-form";
 import {IFormInput,
   AUTH
 } from '../../../Types/User.types';
+
 
 
 
