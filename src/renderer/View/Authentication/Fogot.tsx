@@ -16,7 +16,7 @@ export default function FogotPassword() {
       {/* Cretae Accoutn Tag */}
       <NeedAccount />
       <div>
-        <div className="SignText">Forgot password?</div>
+        <div className="form-heading">Forgot password?</div>
 
         <div className="textgray">
           Enter the email address you used when you joined and we'll

@@ -11,7 +11,7 @@ import { Register, SignIn, ForgotPassword } from './';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { AUTH } from 'Types/User.types';
-import Loader from 'renderer/Components/Loader';
+import Loader from 'renderer/Components/Loader/Loader';
 
 export default function Auth() {
   const user = useSelector(({ auth }: AUTH) => {
@@ -44,7 +44,7 @@ export default function Auth() {
           <div className="copyRightText">&copy;2021, Made by Dream Lab. </div>
         </Col>
         {/* Auth Routing  */}
-        <Col className="col col1 right-col">
+        <Col className="col col1">
           <Router>
             <Switch>
               <Route component={SignIn} path="/" exact />

@@ -1,6 +1,7 @@
 // import './createOrganization.scss';
+import axios from "axios";
 import { CardActionArea } from '@mui/material';
-import { Mark,line } from '../../../src/renderer/Constant/Images';
+import { Mark,line } from '../../Constant/Images';
 import { Col, Row } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 // import Button from 'renderer/Components/Button';
@@ -8,16 +9,27 @@ import InputButton from 'renderer/Components/InputButton';
 import { useForm ,Controller,SubmitHandler} from "react-hook-form";
 import {IFormInput,
   AUTH
-} from '../../Types/User.types';
+} from '../../../Types/User.types';
 import React from 'react';
+import { CreateOrganization } from 'renderer/Store/Actions/Organization.action';
+import {useDispatch,useSelector} from 'react-redux';
 
 function CreateOrgCom() {
+  const dispatch = useDispatch();
   const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
   const { register,formState: { errors }, handleSubmit }=useForm<IFormInput>({criteriaMode:'all'});
+  const User = useSelector(({auth}:AUTH)=>auth.user);
   const onSubmit: SubmitHandler<IFormInput> = (Data) => {
-  //   debugger
-  //  dispatch(signin(Data))
-     console.log(Data);
+    debugger
+    let data={
+      "organizationName":"XYZ",
+      "description" :"xyz is our organization",
+      "owoner":"rehan",
+      "logo":"proje",
+      "address":"isb"
+    }
+ const Res = dispatch(CreateOrganization(data,User.accessToken));
+
   };
   return (
     <div className="App">
@@ -25,9 +37,9 @@ function CreateOrgCom() {
 
              {/* Headind Div */}
             <div className="Heading-Dev">
-                <div className="main-heading1"> <text className="main-heading">Create a new project </text></div>
+                <div className="main-heading1"> <div className="main-heading">Create a new Organization </div></div>
                 <div className="main-Line1"> <img className="main-Line" src={line} alt="Line" /></div>
-                <div className="main-smallHeading1"> <text className="main-smallHeading">Please Enter your Organization Detail </text></div>
+                <div className="main-smallHeading1"> <div className="main-smallHeading">Please Enter your Organization Detail </div></div>
             </div>
 
             {/*Select Project Div */}
@@ -43,16 +55,7 @@ function CreateOrgCom() {
                 <Row>
                     <Col>
                       <input type="text" id="email" className="input_Style" placeholder=" @xyz"
-                        onFocus={()=>SetErrorMessage('')}
-                        {...register("userName", {
-                          required: "This input is required.",
-                          pattern: {
-                            value: /\w+/,
-                            message: "UserName contain alphabate and numbers only.",
 
-                          }
-
-                      })}
                       />
                     </Col>
                   </Row>
@@ -65,14 +68,7 @@ function CreateOrgCom() {
                   <Row style={{ marginTop: 5 }}>
                       <Col>
                         <input type="text" id="email" className="input_Style1" placeholder="Des..."
-                          onFocus={()=>SetErrorMessage('')}
-                          {...register("userName", {
-                            required: "This input is required.",
-                            pattern: {
-                              value: /\w+/,
-                              message: "UserName contain alphabate and numbers only."
-                            }
-                        })}
+
                         />
                       </Col>
                    </Row>
@@ -85,18 +81,9 @@ function CreateOrgCom() {
                 <Row style={{ marginTop: 5 }}>
                     <Col>
                       <input type="file" id="email" className="input_Style3"  placeholder="Des..."
-                        onFocus={()=>SetErrorMessage('')}
-                        {...register("userName", {
-                          required: "This input is required.",
-                          pattern: {
-                            value: /\w+/,
-                            message: "UserName contain alphabate and numbers only."
-                          } })}/>
+                        />
                      </Col>
                     </Row>
-                </form>
-
-              </div>
 
                {/**********Buttom Field**********/}
                 <div className="button-Style">
@@ -111,6 +98,10 @@ function CreateOrgCom() {
                       title=" Create"
                     />
                 </div>
+                </form>
+
+              </div>
+
         </div>
     </div>
   );

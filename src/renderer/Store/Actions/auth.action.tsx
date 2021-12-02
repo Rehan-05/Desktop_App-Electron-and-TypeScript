@@ -2,6 +2,7 @@ import getData from '../../Api/auth.api';
 import {IFormInput} from '../../../Types/User.types'
 
 const signin=(Data:IFormInput)=> (dispatch: any)=>{
+
   dispatch({type:"AUTH_LOGIN_INIT"})
 
    getData.SignIn({

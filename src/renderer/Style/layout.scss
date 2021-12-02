@@ -1,0 +1,24 @@
+.Container {
+  height: 100%;
+  width: 100%;
+}
+.row {
+  width: 100%;
+  margin: 0px;
+  padding:0px;
+}
+
+.col1 {
+  height: 100%;
+  margin: 0px;
+  padding:0px;
+}
+
+.AuthContainer{
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
