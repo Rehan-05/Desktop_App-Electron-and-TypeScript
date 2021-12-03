@@ -9,11 +9,11 @@ const Organizations = mongoose.model(
   new mongoose.Schema({
     organizationName: {type:String,required:true},
     description: {type:String},
-    owoner: {type:String,required:true},
+    owner: {type:mongoose.Schema.Types.ObjectId,ref:"User"},
     logo: {type:String,required:true},
     address: {type:String,required:true},
     // projects: String,
-    // Members: [UserSchema]
+    Members: [{type:mongoose.Schema.Types.ObjectId,ref:"User"}]
   },{timestamps:true})
 );
 
