@@ -9,10 +9,20 @@ import {
 } from 'react-router-dom';
 import { Mark,line } from '../../Constant/Images';
 import { Col, Row } from 'react-bootstrap';
-import CreateOrganizationCom from '../../../../src/renderer/Components/CreateOrganizationCom';
+
+import CreateOrganizationCom from 'renderer/View/CreateOrganization/CreateOrganizationCom';
+import {IFormInput,
+  AUTH
+} from '../../../Types/User.types';
+import { useSelector } from 'react-redux';
+import Loader from 'renderer/Components/Loader/Loader';
+
+
+
 
 
 function App() {
+
 
 
   return (

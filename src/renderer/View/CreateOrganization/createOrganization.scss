@@ -31,8 +31,7 @@
 }
 
 .main-heading1{
-  width:26rem;
-  margin-bottom: 1rem;
+  width:28em;
 }
 
 .main-heading{
@@ -40,7 +39,8 @@
   font-style: normal;
   font-weight: bold;
   font-size: 35px;
-  line-height: 55px;
+  line-height: 10px;
+  margin-left: 1rem;
   color: #000000;
 }
 
@@ -173,6 +173,7 @@ input[type=file]::file-selector-button {
   padding: .2em .4em;
   border-radius: 1em;
   height:2rem;
+  width:8rem;
   background-color: #a29bfe;
   transition: 1s;
 }
@@ -186,11 +187,10 @@ input[type=file]::file-selector-button:hover {
   width:33rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  margin-left: 4rem;
 }
 
 .Create-Button:hover {
-  background-color: #6c5ce7;
-  border: 2px solid #6c5ce7;
+  background-color: #0b0050;
+  border: 2px solid black;
 }
 

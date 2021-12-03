@@ -7,6 +7,15 @@ export interface IFormInput {
 }
 
 
+export interface OrgIFormInput {
+    organizationName?: string;
+    description?: string;
+    owner?: string;
+    logo?: string;
+    address?: string;
+}
+
+
 export interface auth{
   user: any;
   isChecking: boolean;
