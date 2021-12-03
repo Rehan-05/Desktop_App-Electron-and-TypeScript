@@ -12,6 +12,7 @@ class TutorialDataService {
     return http.post(`/auth/signup`, data);
   }
 
+
    createOrganizationApi(data:any,token:string) {
       const header = {
         'Content-Type': 'application/json',
@@ -19,6 +20,7 @@ class TutorialDataService {
       }
     return http.post(`/createOrganization`, data,{headers:header});
   }
+
 
 
 }
