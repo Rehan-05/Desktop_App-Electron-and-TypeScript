@@ -17,19 +17,19 @@ import {useDispatch,useSelector} from 'react-redux';
 
 function CreateOrgCom() {
   const dispatch = useDispatch();
-  const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
-  const { register,formState: { errors }, handleSubmit }=useForm<OrgIFormInput>({criteriaMode:'all'});
+  // const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
+  const { formState: { errors }, handleSubmit }=useForm<OrgIFormInput>({criteriaMode:'all'});
   const User = useSelector(({auth}:AUTH)=>auth.user);
-  const onSubmit: SubmitHandler<IFormInput> = (Data) => {
+  const onSubmit: SubmitHandler<OrgIFormInput> = (Data) => {
     debugger
     let data={
       "organizationName":"XYZ",
       "description" :"xyz is our organization",
-      "owoner":"rehan",
-      "logo":"proje",
-      "address":"isb"
+      "owner":"Rehan",
+      "logo":"project",
+      "address":"Islamabad"
     }
- const Res = dispatch(CreateOrganization(data,User.accessToken));
+    const Res = dispatch(CreateOrganization(data,User.accessToken));
 
 
   };

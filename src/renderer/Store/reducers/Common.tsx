@@ -14,7 +14,7 @@ export const createErrorReducer = (actionType: string) => {
 
 export const createIsFetchingReducer = (actionType: string) => {
   return (state = false, action: any) => {
-
+debugger
     switch (action.type) {
       case `${actionType}_INIT`:
         return true;
