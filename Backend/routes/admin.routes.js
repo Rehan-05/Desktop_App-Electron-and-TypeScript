@@ -1,6 +1,6 @@
 const { authJwt } = require("../middlewares");
-const {CreateOrganization} = require("../controller/Admin.controller");
-
+const {CreateOrganization,AddMembers} = require("../controller/Admin.controller");
+const { verifySignUp } = require("../middlewares");
 module.exports = function(app) {
   app.use(function(req, res, next) {
     res.header(
@@ -14,7 +14,7 @@ module.exports = function(app) {
 
 
   app.post("/api/createOrganization", [authJwt.verifyToken,authJwt.isAdmin], CreateOrganization);
-
+  app.post("/api/addmembers", [authJwt.verifyToken,authJwt.isAdmin], AddMembers);
 
   // app.get(
   //   "/api/test/mod",
