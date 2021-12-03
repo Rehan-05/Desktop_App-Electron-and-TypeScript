@@ -26,7 +26,7 @@ exports.CreateOrganization = (req, res,next) => {
         return;
       }
 
-      createNewOrganization.owner = USER._id;
+    createNewOrganization.owner = USER._id;
     createNewOrganization.save((err, org)=>{
       if(err){
         res.status(500).send({
@@ -68,6 +68,7 @@ exports.AddMembers = (req, res,next) => {
         });
       }
       res.json(org)
+      return
   })
 
 }
