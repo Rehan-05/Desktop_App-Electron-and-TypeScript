@@ -8,9 +8,9 @@ export interface IFormInput {
 
 
 export interface OrgIFormInput {
-   organizationName?: string;
+    organizationName?: string;
     description?: string;
-    owoner?: string;
+    owner?: string;
     logo?: string;
     address?: string;
 }

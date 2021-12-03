@@ -1,37 +1,28 @@
 import { createErrorReducer, createIsFetchingReducer } from './common';
+import { combineReducers } from 'redux';
 
 
 
 const OrganizationReducer = () => {
- const AdminData = JSON.parse(localStorage.getItem('User')||"null");
-
- const Admin = (state = AdminData, action:any) => {
+ const Organization = (state =null  , action:any) => {
   debugger
-  const { type, user } = action;
+  const { type, organization } = action;
   switch (type) {
-    case 'CREATE_ORGANIZATION_REQUEST':
-      return {
-        ...state,
-        isFetching: true,
-        error: null,
-      };
-    case 'CREATE_ORGANIZATION_SUCCESS':
-      return {
-        ...state,
-        isFetching: false,
-        error: null,
-        user,
-      };
+    case 'CREATE_ORGANIZATION_INIT':
     case 'CREATE_ORGANIZATION_FAILURE':
-      return {
-        ...state,
-        isFetching: false,
-        error: action.error,
-      };
+      return null;
+    case 'CREATE_ORGANIZATION_SUCCESS':
+      return organization;
     default:
       return state;
  }
 };
+
+return combineReducers({
+  Organization,
+  isChecking: createIsFetchingReducer('CREATE_ORGANIZATION'),
+  error: createErrorReducer('CREATE_ORGANIZATION'),
+});
 }
 
-export default OrganizationReducer;
+export default OrganizationReducer();
