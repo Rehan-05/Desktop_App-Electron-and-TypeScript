@@ -13,7 +13,7 @@ const ConfigureStore=()=>{
 const store = createStore(
   combineReducers({
     auth,
-    Organization
+    organization:Organization
   }),
   applyMiddleware(...middleware)
 );

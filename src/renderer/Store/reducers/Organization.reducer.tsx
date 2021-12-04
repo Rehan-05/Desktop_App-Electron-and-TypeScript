@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 
 
 const OrganizationReducer = () => {
- const Organization = (state =null  , action:any) => {
+ const organization = (state =null  , action:any) => {
   debugger
   const { type, organization } = action;
   switch (type) {
@@ -19,7 +19,7 @@ const OrganizationReducer = () => {
 };
 
 return combineReducers({
-  Organization,
+  organization,
   isChecking: createIsFetchingReducer('CREATE_ORGANIZATION'),
   error: createErrorReducer('CREATE_ORGANIZATION'),
 });

@@ -2,7 +2,6 @@ import api from 'renderer/Api/auth.api';
 
 
 const CreateOrganization = (Data:any,token:string) =>(dispatch:any) => {
-  debugger
   dispatch({ type: 'CREATE_ORGANIZATION_INIT' });
   api.createOrganizationApi(Data,token).then(res => {
 
