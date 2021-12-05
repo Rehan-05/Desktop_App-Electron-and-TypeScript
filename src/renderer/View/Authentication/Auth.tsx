@@ -33,7 +33,7 @@ export default function Auth() {
     );
   }
   if (user) {
-    history.push("/createOrganization");
+    return <Redirect to="/createOrganization" />;
   }
   // if(user?.joinedOrganization){
   //   return <Redirect to="/addmembers" />;

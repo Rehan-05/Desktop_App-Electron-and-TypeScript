@@ -62,13 +62,13 @@ function CreateOrgCom() {
   };
 React.useEffect(()=>{
 if(Organization&&Organization?.Members.length==0){
-  history.replace("/addmembers")
+  history.replace("/createOrganization/addmembers")
 }
 
 },[Organization])
 
 if(User?.joinedOrganization){
-  history.replace("/addmembers")
+  history.replace("/createOrganization/addmembers")
 }
 >>>>>>> e7b1232f8ae16b80568989934d147703fefb5d09
   return (

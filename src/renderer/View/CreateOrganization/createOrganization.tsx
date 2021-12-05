@@ -6,44 +6,51 @@ import {
   MemoryRouter as Router,
   Switch,
   Redirect,
+  useHistory
 } from 'react-router-dom';
 import { Mark } from '../../Constant/Images';
 import { Col, Row } from 'react-bootstrap';
 
 import CreateOrganizationCom from 'renderer/View/CreateOrganization/CreateOrganizationCom';
-import  AddMembers  from './AddMembers';
-
-
-
-
+import AddMembers from './AddMembers';
 
 function App() {
-
+const history= useHistory();
 
 
   return (
-        <div className="Container">
-            <Row className="row">
+    <div className="Container">
+      <Row className="row">
+        <Col className="col col1">
+          <Router>
+            <Switch>
+            <Route
+                exact
+                path="/"
+                render={() => (
 
-               <Col className="col col1">
-                <Router>
-                    <Switch>
-                      <Route component={CreateOrganizationCom} path="/" exact />
-                      <Route component={AddMembers} path="/addmembers" exact />
-                      <Route path="/dasboard" >
-                        <h1>pakistan</h1>
-                      </Route>
-                      </Switch>
-                  </Router>
-               </Col>
+                      <Redirect to="/createOrganization/create" />
+                    )}
+              />
+              <Route
+                component={CreateOrganizationCom}
+                path="/createOrganization/create"
 
-               <Col className="col-5 col1 LeftSide">
-                   <img className="RightSidePic" src={Mark} alt="back" />
-              </Col>
+              />
+              <Route
 
-            </Row>
-        </div>
+                path="/createOrganization/addmembers">
+                  <AddMembers ParentHistory={history} />
+                </Route>
+            </Switch>
+          </Router>
+        </Col>
 
+        <Col className="col-5 col1 LeftSide">
+          <img className="RightSidePic" src={Mark} alt="back" />
+        </Col>
+      </Row>
+    </div>
   );
 }
 
