@@ -1,4 +1,3 @@
-
 import { Col, Row, Container } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 // import Button from 'renderer/Components/Button';

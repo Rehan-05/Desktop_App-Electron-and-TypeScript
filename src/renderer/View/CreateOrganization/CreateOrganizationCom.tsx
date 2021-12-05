@@ -7,13 +7,9 @@ import { Col, Row,Container } from 'react-bootstrap';
 // import Button from 'renderer/Components/Button';
 import InputButton from 'renderer/Components/InputButton';
 import { useForm ,Controller,SubmitHandler} from "react-hook-form";
-<<<<<<< HEAD
-import {IFormInput,AUTH,OrgIFormInput
-=======
 import {
   AUTH,
   OrgIFormInput
->>>>>>> e7b1232f8ae16b80568989934d147703fefb5d09
 } from '../../../Types/User.types';
 import React from 'react';
 import { CreateOrganization } from 'renderer/Store/Actions/Organization.action';
@@ -29,35 +25,12 @@ interface org{
 
 function CreateOrgCom() {
   const dispatch = useDispatch();
-<<<<<<< HEAD
-  const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
-  const {register, formState: { errors }, handleSubmit }=useForm<OrgIFormInput>({criteriaMode:'all'});
-=======
   const history =useHistory()
 
   const { register,formState: { errors }, handleSubmit }=useForm<OrgIFormInput>({criteriaMode:'all'});
->>>>>>> e7b1232f8ae16b80568989934d147703fefb5d09
   const User = useSelector(({auth}:AUTH)=>auth.user);
   const Organization = useSelector(({organization}:org)=>{ return organization.organization})
   const onSubmit: SubmitHandler<OrgIFormInput> = (Data) => {
-<<<<<<< HEAD
-    debugger
-    let data={
-      "organizationName":"XYZ",
-      "description" :"xyz is our organization",
-      "owner":"Rehan",
-      "logo":"project",
-      "address":"Islamabad"
-    }
-    try{
-      debugger
-      console.log( dispatch(CreateOrganization(data,User.accessToken)) );
-     }
-    catch(e){
-      console.log(e);
-    }
-  };
-=======
      dispatch(CreateOrganization(Data,User.accessToken))
   };
 React.useEffect(()=>{
@@ -70,20 +43,14 @@ if(Organization&&Organization?.Members.length==0){
 if(User?.joinedOrganization){
   history.replace("/createOrganization/addmembers")
 }
->>>>>>> e7b1232f8ae16b80568989934d147703fefb5d09
   return (
     <Container className="AuthContainer">
 
 
         {/* Headind Div */}
          <div className="Heading-Dev">
-<<<<<<< HEAD
-                <div className="main-heading1"> <div className="main-heading">Create a new Organization </div></div>
-                <div className="main-smallHeading1"> <div className="main-smallHeading">Please Enter your Organization Detail </div></div>
-=======
         <div className="main-heading">Create a new Organization </div>
              <div className="main-smallHeading">Please Enter your Organization Detail </div>
->>>>>>> e7b1232f8ae16b80568989934d147703fefb5d09
          </div>
 
         {/*Select Project Div */}
@@ -108,7 +75,7 @@ if(User?.joinedOrganization){
               </Row>
 
             {/***2nd***/}
-              <Row className="LabelStyle4">
+              <Row className="LabelStyle">
                 <Col className="LabelInput">Organization Address</Col>
               </Row>
               <Row>
