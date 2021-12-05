@@ -31,8 +31,10 @@ export default function Auth() {
       </div>
     );
   }
-  if (user) {
+  if (user.joinedOrganization!=undefined) {
     return <Redirect to="/createOrganization" />;
+  }else if(user.joinedOrganization==undefined){
+    return <Redirect to="/Addmember" />;
   }
   return (
     <div className="Container">
