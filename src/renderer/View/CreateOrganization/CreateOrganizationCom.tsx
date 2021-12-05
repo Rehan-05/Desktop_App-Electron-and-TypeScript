@@ -37,7 +37,12 @@ React.useEffect(()=>{
 if(Organization&&Organization?.Members.length==0){
   history.replace("/addmembers")
 }
+
 },[Organization])
+
+if(User?.joinedOrganization){
+  history.replace("/addmembers")
+}
   return (
     <Container className="AuthContainer">
 
@@ -108,7 +113,8 @@ if(Organization&&Organization?.Members.length==0){
                 </Row>
 
               {/***Button Field***/}
-                 <div className="button-Style">
+                 <Row>
+                    <Col>
                     <InputButton
 
                      className="Create-Button"
@@ -118,7 +124,9 @@ if(Organization&&Organization?.Members.length==0){
                      color: '#FFFFFF',
                      width:300,marginTop:30  }}
                      title=" Create"  />
-                  </div>
+                    </Col>
+
+                  </Row>
          </form>
 <button onClick={()=>{debugger;dispatch(logout())}}>logout</button>
 

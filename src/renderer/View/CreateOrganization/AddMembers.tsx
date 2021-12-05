@@ -1,7 +1,4 @@
-// import './createOrganization.scss';
-import axios from 'axios';
-import { CardActionArea } from '@mui/material';
-import { Mark, line } from '../../Constant/Images';
+
 import { Col, Row, Container } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 // import Button from 'renderer/Components/Button';
@@ -13,6 +10,8 @@ import { CreateOrganization } from 'renderer/Store/Actions/Organization.action';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'renderer/Store/Actions/auth.action';
 import { useHistory } from 'react-router-dom';
+import CustomButton from 'renderer/Components/Button';
+
 
 interface org {
   organization: any;
@@ -40,15 +39,11 @@ function AddMembers() {
   return (
     <Container className="AuthContainer">
       {/* Headind Div */}
-      <div className="Heading-Dev">
         <div className="main-heading">Addmembers</div>
         <div className="main-smallHeading">
           Please Enter your Organization Detail{' '}
         </div>
-      </div>
-
       {/*Select Project Div */}
-
       <form className="form-1" onSubmit={handleSubmit(onSubmit)}>
         {/***1st***/}
         <Row className="LabelStyle">
@@ -116,28 +111,35 @@ function AddMembers() {
         </Row>
 
         {/***Button Field***/}
-        <div className="button-Style">
-          <InputButton
-            className="Create-Button"
-            buttonStyle={{
-              backgroundImage: ` linear-gradient(to right, #0905AF 0%, #0905AF 47%, #0905AF 100%)`,
-              boxShadow: `3.994px 22.651px 57px rgba(97, 73, 205, 0.259)`,
-              color: '#FFFFFF',
-              width: 300,
-              marginTop: 30,
-            }}
-            title=" Create"
-          />
-        </div>
+        <Row className="button-Style">
+                    <Col>
+                    <InputButton
+
+                     className="Create-Button"
+                     buttonStyle={{
+                     backgroundImage: `linear-gradient(to right, #0905AF 0%, #0905AF 47%, #0905AF 100%)`,
+                     boxShadow: `3.994px 22.651px 57px rgba(97, 73, 205, 0.259)`,
+                     color: '#FFFFFF',
+                     width:200,marginTop:30  }}
+                     title=" Create"  />
+                    </Col>
+                    <Col>
+                    <CustomButton
+                    onClick={() => history.push('/dasboard')}
+                    icon={false}
+                     className="Create-Button"
+                     buttonStyle={{
+                      borderWidth: 1,
+                      borderStyle: 'solid',
+                      borderColor: '#EBEBEB',
+                     color: '#000000',
+                     width:200,
+                     marginTop:30  }}
+                     title=" Skip"  />
+                    </Col>
+                  </Row>
       </form>
-      <button
-        onClick={() => {
-          debugger;
-          dispatch(logout());
-        }}
-      >
-        logout
-      </button>
+
     </Container>
   );
 }

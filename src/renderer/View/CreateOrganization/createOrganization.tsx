@@ -29,10 +29,11 @@ function App() {
                 <Router>
                     <Switch>
                       <Route component={CreateOrganizationCom} path="/" exact />
-                    </Switch>
-                    <Switch>
                       <Route component={AddMembers} path="/addmembers" exact />
-                    </Switch>
+                      <Route path="/dasboard" >
+                        <h1>pakistan</h1>
+                      </Route>
+                      </Switch>
                   </Router>
                </Col>
 

@@ -17,13 +17,7 @@
   font-weight: bold;
   font-size: 35px;
  color: #000000;
-}
-.main-heading-text{
-  font-size: 20px;
-  color: #fff;
-}
-.main-smallHeading1{
-  width:25rem;
+ align-self: flex-start;
 }
 
 .main-smallHeading{
@@ -32,6 +26,7 @@
   font-weight: 800;
   font-size: 18px;
   color: #7A86A1;
+  align-self: flex-start;
 }
 .Select-Div{
    height: 70px;
@@ -39,11 +34,7 @@
   flex-direction: row;
 }
 .form-1{
-  justify-content:center;
-  align-items:center;
 width: 100%;
-  display:flex;
-  flex-direction:column;
 }
 
 
@@ -55,9 +46,7 @@ margin-bottom: 10px;
 input[type=file]::file-selector-button {
 height: 100%;
 }
-input[type=file]::file-selector-button:hover {
-  border: 2px solid blue;
-}
+
 
 .button-Style{
   width:33rem;
@@ -66,8 +55,9 @@ input[type=file]::file-selector-button:hover {
 }
 
 .Create-Button:hover {
-  background-color: #0b0050;
-  border: 2px solid black;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
 }
 
 #Org_Des{
