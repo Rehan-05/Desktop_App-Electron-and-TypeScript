@@ -7,9 +7,7 @@ import { Col, Row } from 'react-bootstrap';
 // import Button from 'renderer/Components/Button';
 import InputButton from 'renderer/Components/InputButton';
 import { useForm ,Controller,SubmitHandler} from "react-hook-form";
-import {IFormInput,
-  AUTH,
-  OrgIFormInput
+import {IFormInput,AUTH,OrgIFormInput
 } from '../../../Types/User.types';
 import React from 'react';
 import { CreateOrganization } from 'renderer/Store/Actions/Organization.action';
@@ -17,8 +15,8 @@ import {useDispatch,useSelector} from 'react-redux';
 
 function CreateOrgCom() {
   const dispatch = useDispatch();
-  // const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
-  const { formState: { errors }, handleSubmit }=useForm<OrgIFormInput>({criteriaMode:'all'});
+  const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
+  const {register, formState: { errors }, handleSubmit }=useForm<OrgIFormInput>({criteriaMode:'all'});
   const User = useSelector(({auth}:AUTH)=>auth.user);
   const onSubmit: SubmitHandler<OrgIFormInput> = (Data) => {
     debugger
@@ -29,9 +27,13 @@ function CreateOrgCom() {
       "logo":"project",
       "address":"Islamabad"
     }
-    const Res = dispatch(CreateOrganization(data,User.accessToken));
-
-
+    try{
+      debugger
+      console.log( dispatch(CreateOrganization(data,User.accessToken)) );
+     }
+    catch(e){
+      console.log(e);
+    }
   };
   return (
     <div className="App">
@@ -40,7 +42,6 @@ function CreateOrgCom() {
         {/* Headind Div */}
          <div className="Heading-Dev">
                 <div className="main-heading1"> <div className="main-heading">Create a new Organization </div></div>
-                <div className="main-Line1"> <img className="main-Line" src={line} alt="Line" /></div>
                 <div className="main-smallHeading1"> <div className="main-smallHeading">Please Enter your Organization Detail </div></div>
          </div>
 
@@ -58,7 +59,7 @@ function CreateOrgCom() {
               </Row>
 
             {/***2nd***/}
-              <Row className="LabelStyle">
+              <Row className="LabelStyle4">
                 <Col className="LabelInput">Organization Address</Col>
               </Row>
               <Row>

@@ -26,8 +26,7 @@
 .Heading-Dev{
   margin-top: 2.5rem;
   width:30rem;
-  margin-bottom: 1rem;
-  margin-left: 5rem;
+  margin-left: 2rem;
 }
 
 .main-heading1{
@@ -39,13 +38,9 @@
   font-style: normal;
   font-weight: bold;
   font-size: 35px;
-  line-height: 10px;
+  line-height: 5px;
   margin-left: 1rem;
   color: #000000;
-}
-
-.main-Line1{
-  width:10rem;
 }
 
 .main-heading-text{
@@ -54,7 +49,7 @@
 }
 
 .main-smallHeading1{
-  width:25rem;
+  width:23rem;
 
 }
 
@@ -114,25 +109,40 @@
 }
 
 .Select-Project-Div{
-  margin-left:5rem;
+  margin-left:2rem;
   margin-top: 2rem;
 }
 .LabelStyle{
   width:15rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   margin-top: 1rem;
+  margin-left: 1rem;
+
 }
+
+.LabelStyle4{
+  width:15rem;
+  margin-bottom: 0.3rem;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+
+}
+
+
 
 .LabelStyle2{
   width:17rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   margin-top: 2rem;
+  margin-left: 1.5rem;
 }
 
 .LabelStyle3{
   width:12rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   margin-top: 2rem;
+  margin-left: 1.5rem;
+
 }
 
 .input_Style{
@@ -172,7 +182,7 @@ input[type=file]::file-selector-button {
   border: 2px solid #6c5ce7;
   padding: .2em .4em;
   border-radius: 1em;
-  height:2rem;
+  height:2.2rem;
   width:8rem;
   background-color: #a29bfe;
   transition: 1s;
@@ -184,7 +194,7 @@ input[type=file]::file-selector-button:hover {
 }
 
 .button-Style{
-  width:33rem;
+  width:27rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
