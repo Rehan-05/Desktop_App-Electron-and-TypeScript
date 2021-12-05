@@ -79,7 +79,7 @@ export default function SignIn() {
 
         <div className="textgray">Or sign in using your email address</div>
 
-       <form onSubmit={handleSubmit(onSubmit)}>
+       <form className="form-1" onSubmit={handleSubmit(onSubmit)}>
        <Row style={{ marginTop: 10 }}>
           <Col className="LabelInput">UserName</Col>
           <Col className="LabelInput">Password</Col>

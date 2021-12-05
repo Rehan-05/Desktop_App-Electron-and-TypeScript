@@ -2,23 +2,45 @@
 import axios from "axios";
 import { CardActionArea } from '@mui/material';
 import { Mark,line } from '../../Constant/Images';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row,Container } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 // import Button from 'renderer/Components/Button';
 import InputButton from 'renderer/Components/InputButton';
 import { useForm ,Controller,SubmitHandler} from "react-hook-form";
+<<<<<<< HEAD
 import {IFormInput,AUTH,OrgIFormInput
+=======
+import {
+  AUTH,
+  OrgIFormInput
+>>>>>>> e7b1232f8ae16b80568989934d147703fefb5d09
 } from '../../../Types/User.types';
 import React from 'react';
 import { CreateOrganization } from 'renderer/Store/Actions/Organization.action';
 import {useDispatch,useSelector} from 'react-redux';
+import {logout} from 'renderer/Store/Actions/auth.action';
+import {useHistory} from 'react-router-dom'
+
+interface org{
+  organization:any,
+  error:any,
+  isChecking:boolean
+}
 
 function CreateOrgCom() {
   const dispatch = useDispatch();
+<<<<<<< HEAD
   const [ErrorMessage,SetErrorMessage]=React.useState<string>('');
   const {register, formState: { errors }, handleSubmit }=useForm<OrgIFormInput>({criteriaMode:'all'});
+=======
+  const history =useHistory()
+
+  const { register,formState: { errors }, handleSubmit }=useForm<OrgIFormInput>({criteriaMode:'all'});
+>>>>>>> e7b1232f8ae16b80568989934d147703fefb5d09
   const User = useSelector(({auth}:AUTH)=>auth.user);
+  const Organization = useSelector(({organization}:org)=>{ return organization.organization})
   const onSubmit: SubmitHandler<OrgIFormInput> = (Data) => {
+<<<<<<< HEAD
     debugger
     let data={
       "organizationName":"XYZ",
@@ -35,26 +57,53 @@ function CreateOrgCom() {
       console.log(e);
     }
   };
+=======
+     dispatch(CreateOrganization(Data,User.accessToken))
+  };
+React.useEffect(()=>{
+if(Organization&&Organization?.Members.length==0){
+  history.replace("/addmembers")
+}
+
+},[Organization])
+
+if(User?.joinedOrganization){
+  history.replace("/addmembers")
+}
+>>>>>>> e7b1232f8ae16b80568989934d147703fefb5d09
   return (
-    <div className="App">
-       <div className="App-Left">
+    <Container className="AuthContainer">
+
 
         {/* Headind Div */}
          <div className="Heading-Dev">
+<<<<<<< HEAD
                 <div className="main-heading1"> <div className="main-heading">Create a new Organization </div></div>
                 <div className="main-smallHeading1"> <div className="main-smallHeading">Please Enter your Organization Detail </div></div>
+=======
+        <div className="main-heading">Create a new Organization </div>
+             <div className="main-smallHeading">Please Enter your Organization Detail </div>
+>>>>>>> e7b1232f8ae16b80568989934d147703fefb5d09
          </div>
 
         {/*Select Project Div */}
-       <div className="Select-Project-Div">
-         <form onSubmit={handleSubmit(onSubmit)}>
+
+         <form className="form-1" onSubmit={handleSubmit(onSubmit)}>
              {/***1st***/}
               <Row className="LabelStyle">
                   <Col className="LabelInput">Organization Name</Col>
               </Row>
               <Row>
                   <Col>
-                  <input type="text" id="name" className="input_Style" placeholder=" @xyz" />
+                  <input type="text"  id="OrganzationNamr" className="inputStyle"  placeholder=" @xyz"
+                  {...register("organizationName",{
+                    required:"Organization Name Is Required",
+                  pattern: {
+                    value: /\w{3,}/,
+                    message: "UserName contain alphabate and numbers only."
+                  }
+                })}
+                  />
                    </Col>
               </Row>
 
@@ -64,33 +113,43 @@ function CreateOrgCom() {
               </Row>
               <Row>
                  <Col>
-                   <input type="text" id="address" className="input_Style" placeholder=" Islamabad,F6x.20" />
+                   <input type="text" id="address" className="inputStyle" placeholder=" Islamabad,F6x.20"
+                  {...register("address")}
+
+                   />
                  </Col>
               </Row>
 
              {/***3rd***/}
-                <Row className="LabelStyle3">
+                {/* <Row className="LabelStyle">
                    <Col className="LabelInput">Upload Logo</Col>
                 </Row>
                 <Row style={{ marginTop: 5 }}>
                   <Col>
-                     <input type="file" id="logo" className="input_Style3"  placeholder="Des..." />
+                     <input type="file" id="logo" className="inputStyle"  placeholder="Des..."
+                     {...register("logo")}
+                     />
                   </Col>
-                </Row>
+                </Row> */}
 
              {/***4th***/}
-                <Row className="LabelStyle2">
+                <Row className="LabelStyle">
                    <Col className="LabelInput">Organization Description</Col>
                 </Row>
                 <Row style={{ marginTop: 5 }}>
                    <Col>
-                     <textarea  id="textbox" className="input_Style1" placeholder="Des..."    />
+                     <textarea  id="Org_Des" className="inputStyle " placeholder="Des..."
+                     {...register("description")}
+
+                     />
                     </Col>
                 </Row>
 
               {/***Button Field***/}
-                 <div className="button-Style">
+                 <Row>
+                    <Col>
                     <InputButton
+
                      className="Create-Button"
                      buttonStyle={{
                      backgroundImage: ` linear-gradient(to right, #0905AF 0%, #0905AF 47%, #0905AF 100%)`,
@@ -98,11 +157,13 @@ function CreateOrgCom() {
                      color: '#FFFFFF',
                      width:300,marginTop:30  }}
                      title=" Create"  />
-                  </div>
+                    </Col>
+
+                  </Row>
          </form>
-       </div>
-     </div>
-   </div>
+<button onClick={()=>{debugger;dispatch(logout())}}>logout</button>
+
+   </Container>
   );
 }
 

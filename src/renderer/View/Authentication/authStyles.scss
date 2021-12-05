@@ -34,15 +34,12 @@
   align-items: center;
   font-family: Manrope;
 }
-
-
-
-  .LeftSide {
-    display: none;
-    // width: 90%;
-
-
+@media only screen and (min-width: 1200px){
+  .LeftSide{
+    display: block;
   }
+}
+
 
 .textgray{
   font-family: Manrope;

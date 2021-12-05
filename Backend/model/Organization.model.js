@@ -10,8 +10,8 @@ const Organizations = mongoose.model(
     organizationName: {type:String,required:true},
     description: {type:String},
     owner: {type:mongoose.Schema.Types.ObjectId,ref:"User"},
-    logo: {type:String,required:true},
-    address: {type:String,required:true},
+    logo: {type:String},
+    address: {type:String},
     // projects: String,
     Members: [{type:mongoose.Schema.Types.ObjectId,ref:"User"}]
   },{timestamps:true})
