@@ -20,9 +20,9 @@ function CreateAuthReucers() {
   const UserData = JSON.parse(localStorage.getItem('User')||"null");
 
   const user = (state = UserData, action: any) => {
-    debugger
+
     const { type, user } = action;
-    debugger
+
     switch (type) {
       case 'AUTH_ON_ERROR':
       case 'AUTH_ON_INIT':

@@ -6,44 +6,51 @@ import {
   MemoryRouter as Router,
   Switch,
   Redirect,
+  useHistory
 } from 'react-router-dom';
-import { Mark,line } from '../../Constant/Images';
+import { Mark } from '../../Constant/Images';
 import { Col, Row } from 'react-bootstrap';
 
 import CreateOrganizationCom from 'renderer/View/CreateOrganization/CreateOrganizationCom';
-import {IFormInput,
-  AUTH
-} from '../../../Types/User.types';
-import { useSelector } from 'react-redux';
-import Loader from 'renderer/Components/Loader/Loader';
-
-
-
-
+import AddMembers from './AddMembers';
 
 function App() {
-
+const history= useHistory();
 
 
   return (
-        <div className="Container">
-            <Row className="row">
+    <div className="Container">
+      <Row className="row">
+        <Col className="col col1">
+          <Router>
+            <Switch>
+            <Route
+                exact
+                path="/"
+                render={() => (
 
-               <Col className="col-7 col1 App-Left">
-                <Router>
-                    <Switch>
-                      <Route component={CreateOrganizationCom} path="/" exact />
-                    </Switch>
-                  </Router>
-               </Col>
+                      <Redirect to="/createOrganization/create" />
+                    )}
+              />
+              <Route
+                component={CreateOrganizationCom}
+                path="/createOrganization/create"
 
-               <Col className="col col1 App-Right">
-                   <img className="RightSidePic" src={Mark} alt="back" />
-              </Col>
+              />
+              <Route
 
-            </Row>
-        </div>
+                path="/createOrganization/addmembers">
+                  <AddMembers ParentHistory={history} />
+                </Route>
+            </Switch>
+          </Router>
+        </Col>
 
+        <Col className="col-5 col1 LeftSide">
+          <img className="RightSidePic" src={Mark} alt="back" />
+        </Col>
+      </Row>
+    </div>
   );
 }
 

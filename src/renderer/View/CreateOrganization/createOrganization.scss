@@ -1,18 +1,7 @@
-.App {
-  background-color: #ffff;
-  min-height: 100vh;
-  flex-direction: row;
-  float: left;
-}
 
-.App-Left {
-  width: 45rem;
-  // background-color: #717D7E;
- }
+
 
 .App-Right{
-  width: 55rem;
-  // background-color: green;
   display: none;
 }
 
@@ -21,36 +10,13 @@
     display: block;
   }
 }
-
-
-.Heading-Dev{
-  margin-top: 2.5rem;
-  width:30rem;
-  margin-left: 2rem;
-}
-
-.main-heading1{
-  width:28em;
-}
-
 .main-heading{
   font-family: Manrope;
   font-style: normal;
   font-weight: bold;
   font-size: 35px;
-  line-height: 5px;
-  margin-left: 1rem;
-  color: #000000;
-}
-
-.main-heading-text{
-  font-size: 20px;
-  color: #fff;
-}
-
-.main-smallHeading1{
-  width:23rem;
-
+ color: #000000;
+ align-self: flex-start;
 }
 
 .main-smallHeading{
@@ -58,149 +24,42 @@
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
-  line-height: 25px;
   color: #7A86A1;
+  align-self: flex-start;
 }
-
-
-
 .Select-Div{
    height: 70px;
    display: flex;
   flex-direction: row;
 }
-
-.Select-Div-Heading {
-
-  margin-top: 25px;
-  margin-top: 3rem;
-
+.form-1{
+width: 100%;
 }
 
-.Card-Style{
-   height:8rem;
-   width:8rem;
-   border-color: #717D7E;
-   border-width: 0.5;
-   border-style: dashed;
-   margin:1rem;
-   border-radius: 1rem;
-}
 
-.Card-Style1{
-  height:8rem;
-   width:8rem;
-   border-color: #717D7E;
-   border-width: 0.5;
-   border-style: solid;
-   margin:1rem;
-   border-radius: 1rem;
-}
-
-.main-Right{
-  width: 50rem;
-}
-.main-Right-pic{
-  height: 45rem;
-  width: 32rem;
-  position: absolute;
-  top: 0rem;
-  right: 0rem;
-}
-
-.Select-Project-Div{
-  margin-left:2rem;
-  margin-top: 2rem;
-}
 .LabelStyle{
-  width:15rem;
-  margin-bottom: 0.3rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
-
+text-align: start;
+margin-top:10px;
+margin-bottom: 10px;
 }
-
-.LabelStyle4{
-  width:15rem;
-  margin-bottom: 0.3rem;
-  margin-top: 1rem;
-  margin-left: 1.5rem;
-
-}
-
-
-
-.LabelStyle2{
-  width:17rem;
-  margin-bottom: 0.3rem;
-  margin-top: 2rem;
-  margin-left: 1.5rem;
-}
-
-.LabelStyle3{
-  width:12rem;
-  margin-bottom: 0.3rem;
-  margin-top: 2rem;
-  margin-left: 1.5rem;
-
-}
-
-.input_Style{
-  height:40px;
-  margin-Right:18rem;
-  border: 1px solid #EBEBEB;
-  border-radius:20px;
-  width: 44%;
-  padding-left: 20px;
-  font-family:Manrope;
-
-}
-
-.input_Style1{
-  height:80px;
-  margin-Right:18rem;
-  border: 1px solid #EBEBEB;
-  border-radius:22.5px;
-  width: 44%;
-  padding-left: 20px;
-  font-family:Manrope;
-}
-
-.input_Style3{
-  height:40px;
-  margin-Right:18rem;
-  border: 1px solid #EBEBEB;
-  border-radius:20px;
-  width: 44%;
-  padding-left: 18px;
-  padding-top:2.5px;
-  padding-bottom: 5px;
-  font-family:Manrope;
-}
-
 input[type=file]::file-selector-button {
-  border: 2px solid #6c5ce7;
-  padding: .2em .4em;
-  border-radius: 1em;
-  height:2.2rem;
-  width:8rem;
-  background-color: #a29bfe;
-  transition: 1s;
+height: 100%;
 }
 
-input[type=file]::file-selector-button:hover {
-  background-color: blue;
-  border: 2px solid blue;
-}
 
 .button-Style{
-  width:27rem;
+  width:33rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
 
 .Create-Button:hover {
-  background-color: #0b0050;
-  border: 2px solid black;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
 }
 
+#Org_Des{
+  min-height: 70px;
+  max-height: 100px;
+}
