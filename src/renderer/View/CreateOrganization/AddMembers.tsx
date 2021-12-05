@@ -9,7 +9,7 @@ import React from 'react';
 import { CreateOrganization } from 'renderer/Store/Actions/Organization.action';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'renderer/Store/Actions/auth.action';
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory,withRouter } from 'react-router-dom';
 import CustomButton from 'renderer/Components/Button';
 
 
@@ -19,9 +19,9 @@ interface org {
   isChecking: boolean;
 }
 
-function AddMembers() {
+const AddMembers = withRouter(function({history,ParentHistory}:any) {
   const dispatch = useDispatch();
-  const history = useHistory();
+
 
   const {
     register,
@@ -35,6 +35,9 @@ function AddMembers() {
   const onSubmit: SubmitHandler<OrgIFormInput> = (Data) => {
     dispatch(CreateOrganization(Data, User.accessToken));
   };
+  const RedirectToDashBoard=()=>{
+    ParentHistory.push('/dashboard');
+  }
 
   return (
     <Container className="AuthContainer">
@@ -125,7 +128,7 @@ function AddMembers() {
                     </Col>
                     <Col>
                     <CustomButton
-                    onClick={() => history.push('/dasboard')}
+                    onClick={() => RedirectToDashBoard()}
                     icon={false}
                      className="Create-Button"
                      buttonStyle={{
@@ -142,6 +145,6 @@ function AddMembers() {
 
     </Container>
   );
-}
+})
 
 export default AddMembers;

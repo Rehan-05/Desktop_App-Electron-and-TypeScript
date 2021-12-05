@@ -35,13 +35,13 @@ function CreateOrgCom() {
   };
 React.useEffect(()=>{
 if(Organization&&Organization?.Members.length==0){
-  history.replace("/addmembers")
+  history.replace("/createOrganization/addmembers")
 }
 
 },[Organization])
 
 if(User?.joinedOrganization){
-  history.replace("/addmembers")
+  history.replace("/createOrganization/addmembers")
 }
   return (
     <Container className="AuthContainer">
