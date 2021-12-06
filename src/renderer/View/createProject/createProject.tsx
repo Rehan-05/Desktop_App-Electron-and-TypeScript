@@ -1,31 +1,25 @@
-import { useDispatch } from "react-redux";
-import { logout } from "../../Store/Actions/auth.action";
-
+import { useDispatch } from 'react-redux';
+import { logout } from '../../Store/Actions/auth.action';
 
 export default function CreateProject() {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
   return (
-  <div
-  style={{ height:'100vh',width:'100%'}}
-  >
-    <button
-    onClick={()=>{
-      dispatch(logout())
-    }}
-
-    >
-Logout
-    </button>
-  </div>
-  )
+    <div style={{ height: '100vh', width: '100%' }}>
+      <button
+        onClick={() => {
+          dispatch(logout());
+        }}
+      >
+        Logout
+      </button>
+    </div>
+  );
 }
-
 
 // import { CardActionArea } from '@mui/material';
 // import { IoIosAdd } from "react-icons/io";
 // import { IoMdRocket } from "react-icons/io";
 // import { BsFillFileEarmarkTextFill } from "react-icons/bs";
-
 
 // function CreateProject() {
 //   return (
@@ -73,8 +67,6 @@ Logout
 //                 </div>
 
 //             </div>
-
-
 
 //         </div>
 //     </div>
