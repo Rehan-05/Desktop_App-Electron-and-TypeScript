@@ -1,7 +1,4 @@
-
-
-
-.App-Right{
+.App-Right {
   display: none;
 }
 
@@ -10,56 +7,52 @@
     display: block;
   }
 }
-.main-heading{
+.main-heading {
   font-family: Manrope;
   font-style: normal;
   font-weight: bold;
   font-size: 35px;
- color: #000000;
- align-self: flex-start;
+  color: #000000;
+  align-self: flex-start;
 }
 
-.main-smallHeading{
+.main-smallHeading {
   font-family: Manrope;
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
-  color: #7A86A1;
+  color: #7a86a1;
   align-self: flex-start;
 }
-.Select-Div{
-   height: 70px;
-   display: flex;
+.Select-Div {
+  height: 70px;
+  display: flex;
   flex-direction: row;
 }
-.form-1{
-width: 100%;
+.form-1 {
+  width: 100%;
 }
 
-
-.LabelStyle{
-text-align: start;
-margin-top:10px;
-margin-bottom: 10px;
+.LabelStyle {
+  text-align: start;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-input[type=file]::file-selector-button {
-height: 100%;
+input[type='file']::file-selector-button {
+  height: 100%;
 }
 
-
-.button-Style{
-  width:33rem;
+.button-Style {
+  width: 33rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
 
 .Create-Button:hover {
-
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#Org_Des{
+#Org_Des {
   min-height: 70px;
   max-height: 100px;
 }

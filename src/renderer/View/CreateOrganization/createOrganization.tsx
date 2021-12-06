@@ -6,7 +6,7 @@ import {
   MemoryRouter as Router,
   Switch,
   Redirect,
-  useHistory
+  useHistory,
 } from 'react-router-dom';
 import { Mark } from '../../Constant/Images';
 import { Col, Row } from 'react-bootstrap';
@@ -15,8 +15,7 @@ import CreateOrganizationCom from 'renderer/View/CreateOrganization/CreateOrgani
 import AddMembers from './AddMembers';
 
 function App() {
-const history= useHistory();
-
+  const history = useHistory();
 
   return (
     <div className="Container">
@@ -24,24 +23,18 @@ const history= useHistory();
         <Col className="col col1">
           <Router>
             <Switch>
-            <Route
+              <Route
                 exact
                 path="/"
-                render={() => (
-
-                      <Redirect to="/createOrganization/create" />
-                    )}
+                render={() => <Redirect to="/createOrganization/create" />}
               />
               <Route
                 component={CreateOrganizationCom}
                 path="/createOrganization/create"
-
               />
-              <Route
-
-                path="/createOrganization/addmembers">
-                  <AddMembers ParentHistory={history} />
-                </Route>
+              <Route path="/createOrganization/addmembers">
+                <AddMembers ParentHistory={history} />
+              </Route>
             </Switch>
           </Router>
         </Col>
