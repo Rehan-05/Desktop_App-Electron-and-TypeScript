@@ -51,7 +51,7 @@ This document is a guide the common styling for layout, Button , Form and Text.
 
 ### CreateOrganization 
 
-   ''
+   `main-heading` used to set font of Main Heading in CreateOrganization screen
 
 
 
