@@ -53,7 +53,7 @@ This document is a guide the common styling for layout, Button , Form and Text.
 
    `main-heading` used to set font of Main Heading in CreateOrganization screen
    `main-smallHeading` used for making style small headings
-  
+   `Select-Div` used for making style for Upper small div
 
 
 
