@@ -51,7 +51,15 @@ This document is a guide the common styling for layout, Button , Form and Text.
 
 ### CreateOrganization 
 
-   ''
+   `main-heading` used to set font of Main Heading in CreateOrganization screen
+   `main-smallHeading` used for making style small headings
+   `Select-Div` used for making style for Upper small div
+   `form-1` used for making style for foam div
+   `LabelStyle` used for making Label heading 
+   `input` used for making input styling
+   `select-button-input` used for making input field style
+   `button-Style`  used for making button styled
+   `Create-Button:hover` used for making button hover
 
 
 
