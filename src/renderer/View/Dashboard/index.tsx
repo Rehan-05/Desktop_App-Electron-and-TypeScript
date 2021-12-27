@@ -10,6 +10,7 @@ import {logout} from 'renderer/Store/Actions/auth.action';
 import MyTask from './MyTask';
 import SideBarButton from 'renderer/Components/SideBarButton';
 import { useState } from 'react';
+import Projects from './Projects';
 
 
 export default function index() {
@@ -17,12 +18,25 @@ export default function index() {
   const history = useHistory();
   const [color,setColor] = useState('#000');
   const [btnName,setBtnName] = useState('/home');
-console.log(history.location.pathname)
+  const [displaySlide,setDisplaySlide] = useState('flex');
+
+  const handleSlide=()=>{
+    if(displaySlide=='flex'){
+      setDisplaySlide('none');
+    }else{
+      setDisplaySlide('flex');
+    }
+  }
+
+
   return (
     <div className="row-view">
       <Router>
       {/* side Bar start */}
-  <div className="side-left">
+      {displaySlide=="none"&&<button style={{borderWidth:0 , position:'absolute',top:10,left:20,backgroundColor:"transparent"}}  onClick={handleSlide}>
+        <Icon font="FontAwesome" name="bars" size={25} color="#5A67BA"  />
+      </button>}
+  <div className="side-left" style={{display: displaySlide}}>
     <div className="row-view pr-5 pl-5" style={{justifyContent: 'space-between'}}>
       {/* logo and Text */}
       <div className="row-view " style={{alignItems: 'center'}}>
@@ -36,7 +50,7 @@ console.log(history.location.pathname)
 
       </div>
       {/* Sidebar closing and opening button */}
-      <button style={{borderWidth:0}}>
+      <button style={{borderWidth:0}} onClick={handleSlide}>
         <Icon font="FontAwesome" name="bars" size={25} color="#5A67BA"  />
       </button>
 
@@ -134,7 +148,7 @@ to="/help"
     <Switch>
       <Route path="/home" component={Home} exact />
       <Route path="/mytask" component={MyTask} />
-
+      <Route path="/inbox" component={Projects} />
     </Switch>
   </div>
   </Router>
