@@ -100,8 +100,8 @@ app.whenReady()
       contextIsolation: true,
     }
   })
-
-  SaplasshWindow.loadFile('../renderer/View/SaplashScreen/SaplasshWindow.html')
+// ccgh
+  SaplasshWindow.loadFile(process.env.NODE_ENV === 'development'?'../renderer/View/SaplashScreen/SaplasshWindow.html':`file://${path.resolve(__dirname, '../renderer/', 'View/SaplashScreen/SaplasshWindow.html')}`)
 
   mainWindow.loadURL(resolveHtmlPath('index.html'));
 
