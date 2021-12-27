@@ -6,3 +6,40 @@
   margin:10px 10px 10px 0px;
   height:40px;
 }
+
+.side-bar-btn {
+  border-radius: 15px;
+  border-style: none;
+  // background-Image: linear-gradient(to right, #F9B035 0%, #F98C4E 53%, #F96767 100%);
+  padding-left:10px;
+  width:100%;
+  margin:10px 10px 10px 0px;
+  height:40px;
+  align-items:center;
+  display: flex;
+  text-decoration: none;
+  justify-content:flex-start;
+  z-index: 1;
+
+
+}
+.side-bar-btn:hover {
+color:inherit;
+
+}
+.side-bar-btn-text{
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  letter-spacing: 0.5px;
+  color: #1a1b1f;
+  z-index: 1;
+
+
+}
+
+
+
