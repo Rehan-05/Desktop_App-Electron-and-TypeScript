@@ -7,8 +7,6 @@ exports.CreateOrganization = (req, res,next) => {
   const createNewOrganization = new Organizations({
     organizationName:req.body.organizationName,
     description:req.body.description,
-
-    logo:req.body.logo,
     address:req.body.address,
   });
   createNewOrganization.save((err, organization)=> {
@@ -18,7 +16,7 @@ exports.CreateOrganization = (req, res,next) => {
       });
     }
 
-     User.findByIdAndUpdate(req.body.owner,{memberOf:organization._id},{new:true},(err,USER)=>{
+     User.findByIdAndUpdate(req.userId,{memberOf:organization._id},{new:true},(err,USER)=>{
       if(err){
         res.status(500).send({
           message: err.message

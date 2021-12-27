@@ -109,7 +109,8 @@ exports.signin = (req, res) => {
         email: user.email,
         roles: authorities,
         accessToken: token,
-        status: 200
+        status: 200,
+        joinedOrganization:user.memberOf
       });
     });
 };

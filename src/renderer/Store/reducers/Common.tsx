@@ -1,6 +1,5 @@
 export const createErrorReducer = (actionType: string) => {
   return (state = null, action: any) => {
-    debugger
     switch (action.type) {
       case `${actionType}_INIT`:
         return null;
@@ -14,7 +13,6 @@ export const createErrorReducer = (actionType: string) => {
 
 export const createIsFetchingReducer = (actionType: string) => {
   return (state = false, action: any) => {
-
     switch (action.type) {
       case `${actionType}_INIT`:
         return true;

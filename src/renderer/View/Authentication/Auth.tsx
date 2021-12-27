@@ -5,6 +5,7 @@ import {
   MemoryRouter as Router,
   Switch,
   Redirect,
+  useHistory
 } from 'react-router-dom';
 import { AppLogo, AuthBackPic } from '../../Constant/Images';
 import { Register, SignIn, ForgotPassword } from './';
@@ -23,7 +24,7 @@ export default function Auth() {
   const isCheckingR = useSelector(({ auth }: AUTH) => {
     return auth.register?.isChecking;
   });
-
+  const history = useHistory();
   if (isChecking || isCheckingR) {
     return (
       <div className="Container">
@@ -32,8 +33,11 @@ export default function Auth() {
     );
   }
   if (user) {
-    return <Redirect to="/createOrganization" />;
+    return <Redirect to="/dashboard" />;
   }
+  // if(user?.joinedOrganization){
+  //   return <Redirect to="/addmembers" />;
+  // }
   return (
     <div className="Container">
       <Row className="row">

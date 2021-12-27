@@ -4,64 +4,58 @@
   text-align: center;
   justify-content: center;
   display: flex;
-
 }
 
-.main-heading-dev{
+.main-heading-dev {
   margin-bottom: 10px;
 }
-.Heading-Dev{
+.Heading-Dev {
   display: flex;
   flex-direction: column;
   margin-top: 60px;
 }
 
-
-.main-heading{
+.main-heading {
   margin-bottom: 3.2rem;
   font-size: 50px;
   color: #fff;
 }
-.main-heading-text{
+.main-heading-text {
   font-size: 20px;
   color: #fff;
 }
 
-
 .App-header {
- margin-top: 3rem;
+  margin-top: 3rem;
 }
 
-.Select-Div{
-   height: 70px;
-   display: flex;
+.Select-Div {
+  height: 70px;
+  display: flex;
   flex-direction: row;
 }
 
 .Select-Div-Heading {
-
   margin-top: 25px;
   margin-top: 3rem;
-
 }
 
-.Card-Style{
-   height:8rem;
-   width:8rem;
-   border-color: #717D7E;
-   border-width: 0.5;
-   border-style: dashed;
-   margin:1rem;
-   border-radius: 1rem;
+.Card-Style {
+  height: 8rem;
+  width: 8rem;
+  border-color: #717d7e;
+  border-width: 0.5;
+  border-style: dashed;
+  margin: 1rem;
+  border-radius: 1rem;
 }
 
-.Card-Style1{
-  height:8rem;
-   width:8rem;
-   border-color: #717D7E;
-   border-width: 0.5;
-   border-style: solid;
-   margin:1rem;
-   border-radius: 1rem;
+.Card-Style1 {
+  height: 8rem;
+  width: 8rem;
+  border-color: #717d7e;
+  border-width: 0.5;
+  border-style: solid;
+  margin: 1rem;
+  border-radius: 1rem;
 }
-

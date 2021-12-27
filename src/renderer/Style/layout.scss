@@ -22,3 +22,36 @@
   flex-direction:column;
 }
 
+
+
+
+/* Column container */
+.row-view {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side-left {
+  flex: 25%;
+  background-color: #f1f1f1;
+  padding: 20px 0px 0px 0px;
+  height:100vh;
+}
+
+/* Main column */
+.main-container {
+  flex: 75%;
+  background-color: #ffffff;
+  padding: 20px;
+  height:100vh;
+}
+
+.seprator{
+  border: 0.1px solid #C8CBD9;
+  height:0px;
+  width:100%;
+  margin-top:10px;
+}
+
