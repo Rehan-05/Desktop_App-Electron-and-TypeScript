@@ -1,4 +1,3 @@
-
 import { Col, Row, Container } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 // import Button from 'renderer/Components/Button';
@@ -9,11 +8,10 @@ import React from 'react';
 import { CreateOrganization } from 'renderer/Store/Actions/Organization.action';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'renderer/Store/Actions/auth.action';
-import { Redirect, useHistory,withRouter } from 'react-router-dom';
+import { Redirect, useHistory, withRouter } from 'react-router-dom';
 import CustomButton from 'renderer/Components/Button';
 import Icon from 'react-web-vector-icons'
 // import Genrator from 'generate-password'
-
 
 interface org {
   organization: any;
@@ -21,9 +19,8 @@ interface org {
   isChecking: boolean;
 }
 
-const AddMembers = withRouter(function({history,ParentHistory}:any) {
+const AddMembers = withRouter(function ({ history, ParentHistory }: any) {
   const dispatch = useDispatch();
-
 
   const {
     register,
@@ -37,6 +34,7 @@ const AddMembers = withRouter(function({history,ParentHistory}:any) {
   const onSubmit= (Data:IFormInput)=> {
     dispatch(CreateOrganization(Data, User.accessToken));
   };
+
   const [inputData,setInputdata] = React.useState({name:'',Email:'',userName:'',Password:''});
   const RedirectToDashBoard=()=>{
     ParentHistory.push('/dashboard');
@@ -57,62 +55,78 @@ const AddMembers = withRouter(function({history,ParentHistory}:any) {
         randomstring += chars.substring(rnum,rnum+1);
     }
 
+
     setInputdata({...inputData,Password:randomstring})
   }
   const [passwordShown, setPasswordShown] = React.useState(false);
   return (
     <Container className="AuthContainer">
       {/* Headind Div */}
+
         <div className="main-heading">Add Members</div>
-        <div className="main-smallHeading">
+
+
+
+      {/* <div className="main-smallHeading">
+
           Please Enter your Organization Detail{' '}
-        </div>
+        </div> */}
       {/*Select Project Div */}
       <form className="form-1" onSubmit={()=>onSubmit(inputData)}>
         {/***1st***/}
         <Row className="LabelStyle">
+
           <Col className="LabelInput">Member Name</Col>
+
         </Row>
         <Row>
           <Col>
             <input
               type="text"
+
               id="Name"
               value={inputData?.name}
               className="inputStyle"
               placeholder="Name"
              name="name"
               onChange={handleChange}
+
             />
           </Col>
         </Row>
 
         {/***2nd***/}
         <Row className="LabelStyle">
+
           <Col className="LabelInput">UserName</Col>
+
         </Row>
         <Row>
           <Col>
             <input
               type="text"
+
               id="userName"
               className="inputStyle"
               placeholder="userName"
               value={inputData?.userName}
               name="userName"
               onChange={handleChange}
+
             />
           </Col>
         </Row>
 
         {/***3rd***/}
         <Row className="LabelStyle">
+
                    <Col className="LabelInput">Email</Col>
                 </Row>
                 <Row style={{ marginTop: 5 }}>
                   <Col>
                      <input type="text" id="logo" className="inputStyle"  placeholder="Email" value={inputData?.Email} name="Email" onChange={handleChange}/>
                   </Col>
+
         </Row>
 
         {/***4th***/}
@@ -121,6 +135,7 @@ const AddMembers = withRouter(function({history,ParentHistory}:any) {
         </Row>
         <Row style={{ marginTop: 5 }}>
           <Col>
+
          <div>
          <input
               id="Password"
@@ -131,6 +146,7 @@ const AddMembers = withRouter(function({history,ParentHistory}:any) {
               name="Password"
               value={inputData?.Password}
               onChange={handleChange}
+
             />
             <button style={{height:30,width:30,justifyContent:'center',alignItems: 'center',background:"#fff",borderWidth:0,position:'relative',right:35}} className="eye-icon" type="button"
             onClick={() => genrateRandomPassword()}
@@ -144,7 +160,7 @@ const AddMembers = withRouter(function({history,ParentHistory}:any) {
 
         {/***Button Field***/}
         <Row className="button-Style">
-                    <Col>
+        <Col>
                     <InputButton
 
                      className="Create-Button"
@@ -170,10 +186,10 @@ const AddMembers = withRouter(function({history,ParentHistory}:any) {
                      title=" Skip"  />
                     </Col>
                   </Row>
-      </form>
 
+      </form>
     </Container>
   );
-})
+});
 
 export default AddMembers;
