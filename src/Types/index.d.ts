@@ -10,7 +10,8 @@ name: string,
 size: number,
 color: string,
 font:string,
-
+style?:{},
+className?:string
 
 }
 

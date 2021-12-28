@@ -33,7 +33,7 @@ export default function Auth() {
     );
   }
   if (user) {
-    return <Redirect to="/createOrganization" />;
+    return <Redirect to="/dashboard" />;
   }
   // if(user?.joinedOrganization){
   //   return <Redirect to="/addmembers" />;

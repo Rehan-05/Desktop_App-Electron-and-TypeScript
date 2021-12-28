@@ -12,6 +12,7 @@ import Auth from './View/Authentication/Auth';
 import CreateOrganization from './View/CreateOrganization/createOrganization';
 import CreateProject from './View/createProject/createProject';
 require('react-web-vector-icons/fonts');
+import Dashboard from 'renderer/View/Dashboard'
 
 function AuthRoute({ children, ...rest }: any) {
   const user = useSelector(({ auth }: AUTH) => auth.user);
@@ -43,8 +44,11 @@ export default function App() {
         <AuthRoute path="/createOrganization">
           <CreateOrganization />
         </AuthRoute>
-        <AuthRoute path="/dashboard">
+        <AuthRoute path="/createProject">
           <CreateProject />
+        </AuthRoute>
+        <AuthRoute path="/dashboard">
+          <Dashboard />
         </AuthRoute>
       </Switch>
     </Router>
