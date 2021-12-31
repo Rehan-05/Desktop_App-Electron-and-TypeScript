@@ -13,3 +13,46 @@ color: #5A67BA;
 mix-blend-mode: normal;
 margin-left:5px;
 }
+.pr-5 {
+  padding-right:5px;
+}
+.pl-5{
+  padding-left:5px;
+}
+
+.active-btn{
+  background: #A6ABC8;
+  border-radius: 5px;
+  z-index: 1;
+
+}
+.active-color-text{
+  color: #FFF;
+}
+.project-topbar{
+  border-bottom-width:1 solid rgb(238, 238, 238);
+  height:105px;
+  width:100%;
+}
+.project-title-links-bar{
+  display:flex;
+  flex-direction:column;
+ margin: 20px;
+}
+.project-logo{
+  height:50px;
+  width: 50px;
+  border-radius:10px;
+  background-color:#5A67BA;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.Project-title{
+  font-size:18px;
+  font-weight:bold;
+  color:#000;
+  margin: 0px 10px 0px 5px;
+  font-family: Manpore;
+
+}

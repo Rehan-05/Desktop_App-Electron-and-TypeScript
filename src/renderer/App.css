@@ -8,6 +8,19 @@
 @import './View/CreateOrganization/createOrganization.scss';
 @import './View/createProject/createProject.scss';
 @import './Style/index.scss';
+@import "frappe-gantt/dist/frappe-gantt.css";
+
+
+
+.jc{
+  justify-content:center;
+}
+.ai{
+  align-items:center;
+}
+
+
+
 
 
 @font-face {
