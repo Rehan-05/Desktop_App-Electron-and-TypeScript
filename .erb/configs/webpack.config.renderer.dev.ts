@@ -132,6 +132,7 @@ export default merge(baseConfig, {
      */
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
+      REDUX_LOGGING:{}
     }),
 
     new webpack.LoaderOptionsPlugin({
