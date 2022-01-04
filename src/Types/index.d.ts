@@ -5,6 +5,7 @@ declare module 'react-web-vector-icons' {
 // import Icon from './src/index'
 
 
+
 interface icon {
 name: string,
 size: number,
