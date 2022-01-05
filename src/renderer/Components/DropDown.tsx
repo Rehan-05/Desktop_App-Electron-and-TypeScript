@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Icon from 'react-web-vector-icons';
 
 function Dropdown(props:any) {
   const [isActive, setIsActive] = useState(false);
@@ -8,7 +8,8 @@ function Dropdown(props:any) {
     <div className="dropdown">
       <div className="dropdown-btn" onClick={(e) => setIsActive(!isActive)}>
         {props.selected}
-        <span className="fas fa-caret-down"></span>
+        <Icon  name='down' font='AntDesign'  color='#B0C3CC'  size={25} // style={{}}
+        />
       </div>
       {isActive && (
         <div className="dropdown-content">
