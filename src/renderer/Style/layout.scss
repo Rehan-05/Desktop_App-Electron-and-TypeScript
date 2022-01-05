@@ -31,33 +31,20 @@
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side-left {
-  flex: 25%;
+  width: 25%;
   background-color: #f1f1f1;
   padding: 20px 0px 0px 0px;
   height:100vh;
   flex-direction:column;
-  display:flex;
-  animation: showMenu 2s;
-}
+  display:block;
 
-.close_side_bar {
-  animation: showMenu 2s reverse;
-}
-
-@keyframes showMenu {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 0%;
-  }
 }
 
 /* Main column */
 .main-container {
-  flex: 75%;
+  width: 75%;
   background-color: #ffffff;
-  padding: 20px;
+
   height:100vh;
 }
 .main-container-Div {
@@ -72,6 +59,7 @@
   margin-top:10px;
 }
 
+
 .sepratorRight{
   border: 0.1px solid #C8CBD9;
   height:0px;
@@ -79,7 +67,9 @@
   margin-top:3px;
 }
 
-@media screen and (max-width: 700px) {
+
+@media screen and (max-width: 1200px) {
+
   .main-container {
     width: 100%;
   }
@@ -87,6 +77,7 @@
     display: none;
   }
 }
+
 
 
 .dropdown {
@@ -126,3 +117,16 @@
 .dropdown .dropdown-content .dropdown-item:hover {
   background: #f4f4f4;
 }
+
+.main-container-sub {
+  width: 100%;
+  background-color: #ffffff;
+
+  height:100vh;
+}
+.main-container-project-management{
+  width:100%;
+  height:88vh;
+}
+
+
