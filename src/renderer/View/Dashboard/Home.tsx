@@ -1,5 +1,5 @@
 import React, { useState,Component } from 'react';
-import {  TextField, IconButton } from '@material-ui/core';
+// import {  TextField, IconButton } from '@material-ui/core';
 import SearchBar from 'renderer/Components/SearchBar';
 // import Dropdown from 'renderer/Components/DropDown';
 import Icon from 'react-web-vector-icons';
@@ -8,7 +8,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle'
 
 
 
- const Home = () => {
+ const Home = (props:any) => {
 
   const [selected, setSelected] = useState("Rehan");
 
@@ -29,14 +29,14 @@ import AccountCircle from '@material-ui/icons/AccountCircle'
 
                <div style={{display:'flex',justifyContent:'space-between',flexDirection:'row'}}>
                   <div style={{}}>
-                    <IconButton
+                    {/* <IconButton
                           aria-label="account of current user"
                           aria-controls="menu-appbar"
                           aria-haspopup="true"
                           color="inherit"
                         >
                           <AccountCircle />
-                        </IconButton>
+                        </IconButton> */}
                   </div>
                       {/* <Dropdown selected={selected} setSelected={setSelected} /> */}
                   <div style={{}}>
