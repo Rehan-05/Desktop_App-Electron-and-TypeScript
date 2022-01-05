@@ -244,7 +244,8 @@
     "react-web-vector-icons": "^1.0.2",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.0",
-    "regenerator-runtime": "^0.13.9"
+    "regenerator-runtime": "^0.13.9",
+    "yarn": "^1.22.17"
   },
   "devEngines": {
     "node": ">=14.x",
