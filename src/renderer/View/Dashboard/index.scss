@@ -128,4 +128,56 @@ margin-left:5px;
   background-color: #F8F8F8 ;
   border: 1px solid  #B5B2B2;
   border-radius: 10px;
+
 }
+
+.Top-Divide-Phase{
+  display: flex;
+  flex-direction: row;
+}
+
+.Avatar-Div{
+  margin-left:8px;
+  margin-top:10px;
+}
+
+.Avatar-Name-Icon{
+    display:flex;
+    flex-direction:row;
+}
+
+.Top-Left-Divide-Phase{
+  display: flex;
+  flex-direction: row;
+  height:"10px";
+}
+
+.Create-Project-Div{
+  display: flex;
+  flex-direction: row;
+  height:"20px";
+  margin-top: 12px;
+}
+
+.Left-Create-Project{
+      margin-left:25px;
+      height:65px;
+      background-color:#F3F3F3;
+      width:70px;
+      border-width:1px;
+      border-color:#A6ABC8;
+      border-style:dotted;
+      border-radius:5px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      cursor: pointer;
+      transition: all 0.5s ease-out;
+}
+.Left-Create-Project:hover,.Left-Create-Project:focus{
+  background-color: #fff;
+  color: #333;
+}
+
+
+// style={{marginTop:15,marginLeft:'25px',height:"65px",backgroundColor:'#F3F3F3',width:'70px',borderWidth:"1px",borderColor:"#A6ABC8",borderStyle:"dotted",borderRadius:'5px',display:'flex',justifyContent:'center',alignItems:'center'}}

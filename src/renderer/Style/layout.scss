@@ -91,6 +91,12 @@
   cursor: pointer;
   font-family: Manpore;
   justify-content: space-between;
+  transition: all 0.4s ease-out;
+}
+
+.dropdown .dropdown-btn:hover , .dropdown .dropdown-btn:focus {
+  background: #F6F6FB;
+  color: rgb(179, 153, 153);
 }
 
 .dropdown .dropdown-content {
@@ -107,7 +113,7 @@
 .dropdown .dropdown-content .dropdown-item {
   padding: 10px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease-out;
 }
 .dropdown .dropdown-content .dropdown-item:hover {
   background: #f4f4f4;
@@ -121,6 +127,17 @@
   background-color: #ffffff;
   height:100vh;
 }
+
+.main-container-sub-Home {
+  background-color: #ffffff;
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -17px;
+}
+
 .main-container-project-management{
   width:100%;
   height:88vh;
