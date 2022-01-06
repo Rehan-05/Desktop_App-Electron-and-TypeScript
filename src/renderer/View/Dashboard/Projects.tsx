@@ -135,6 +135,7 @@ function Projects({ sideBar = 'flex' }) {
             />
          </div>
       </div>
+
       <div className="seprator" style={{ marginTop: 0 }} />
       <div className="main-container-project-management">
       <Switch>
