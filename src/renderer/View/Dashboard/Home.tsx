@@ -1,9 +1,9 @@
 import React, { useState,Component } from 'react';
-import {  TextField, IconButton } from '@material-ui/core';
-import SearchBar from 'renderer/Components/SearchBar';
+import {  TextField, IconButton } from "@mui/material";
+// import SearchBar from 'renderer/Components/SearchBar';
  import Dropdown from 'renderer/Components/DropDown';
 import Icon from 'react-web-vector-icons';
-import AccountCircle from '@material-ui/icons/AccountCircle'
+import AccountCircle from '@mui/material/Icon';
 import { relative } from 'path/posix';
 import AvatarGroup from 'react-avatar-group';
 import { Profile } from '../../Constant/Images';
@@ -24,7 +24,7 @@ import {option} from './SideBarButtonsSetails'
                     <h4 style={{color:'#5A67BA',fontSize:30,fontFamily:'AntDesign'}}>Home</h4>
                 </div>
                 <div style={{width:'50%',marginTop:'22px'}}>
-                    <SearchBar />
+                    {/* <SearchBar /> */}
                 </div>
                 <div style={{width:'40%',}}>
                     <div style={{display:'flex',flexDirection:'row',marginTop:'7px'}}>

@@ -91,6 +91,7 @@ export default function index() {
            return (<>
            <SideBarButton
             icon={true}
+            key={index+"__"+item.title}
             title={item.title}
             font={item.font}
             iconName={item.iconName}

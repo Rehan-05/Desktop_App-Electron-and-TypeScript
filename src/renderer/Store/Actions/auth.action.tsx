@@ -33,7 +33,7 @@ const register=(Data:IFormInput)=> (dispatch: any)=>{
     email:Data.Email,
     name:Data.name
   }).then(data=>{
-
+    debugger
     dispatch({type:"AUTH_REGISTER_SUCCESS"})
     dispatch(signin(Data))
     return data;
