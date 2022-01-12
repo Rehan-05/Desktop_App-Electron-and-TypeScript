@@ -200,3 +200,109 @@ export const links = [
     label: 'Clander',
   },
 ];
+
+
+
+export const projects=[
+  {
+    id:1,
+    projectTitle:"Project 1",
+    projectDescription:"Project description",
+    pIconName:"bars",
+    pIconBackgroundColor:"#90ae1a",
+  },
+  {
+    id:2,
+    projectTitle:"Project 2",
+    projectDescription:"Project description",
+    pIconName:"bars",
+    pIconBackgroundColor:"#90ae1a",
+  },
+  {
+    id:3,
+    projectTitle:"Project 2",
+    projectDescription:"Project description",
+    pIconName:"bars",
+    pIconBackgroundColor:"#90ae1a",
+  },
+  {
+    id:4,
+    projectTitle:"Project 4",
+    projectDescription:"Project description",
+    pIconName:"bars",
+    pIconBackgroundColor:"#90ae1a",
+  },
+  {
+    id:5,
+    projectTitle:"Project 5",
+    projectDescription:"Project description",
+    pIconName:"bars",
+    pIconBackgroundColor:"#90ae1a",
+  }
+  ,
+  {
+    id:6,
+    projectTitle:"Project 6",
+    projectDescription:"Project description",
+    pIconName:"bars",
+    pIconBackgroundColor:"#90ae1a",
+  }
+]
+
+export const ProjectCollabrator=[
+  {
+    id:1,
+    name:"John Doe",
+    image:"https://via.placeholder.com/150x150",
+    role:"Project Manager",
+    status:"Active",
+
+    email:"email@example.com",
+    description:"Description description"
+
+  },
+  {
+    id:2,
+    name:"John Doe",
+    image:"https://via.placeholder.com/150x150",
+    role:"Project Manager",
+    status:"Active",
+
+    email:"email@example.com",
+    description:"Description description"
+
+  },
+  {
+    id:3,
+    name:"John Doe",
+    image:"https://via.placeholder.com/150x150",
+    role:"Project Manager",
+    status:"Active",
+
+    email:"email@example.com",
+    description:"Description description"
+
+  },
+  {
+    id:4,
+    name:"John Doe",
+    image:"https://via.placeholder.com/150x150",
+    role:"Project Manager",
+    status:"Active",
+
+    email:"email@example.com",
+    description:"Description description"
+
+  },
+  {
+    id:5,
+    name:"John Doe",
+    image:"https://via.placeholder.com/150x150",
+    role:"Project Manager",
+    status:"Active",
+
+    email:"email@example.com",
+    description:"Description description"
+
+  },
+]

@@ -26,13 +26,10 @@ function App() {
               <Route
                 exact
                 path="/"
-                render={() => <Redirect to="/createOrganization/create" />}
+                render={() => <Redirect to="/createOrganization/addmembers" />}
               />
-              <Route
-                component={CreateOrganizationCom}
-                path="/createOrganization/create"
-              />
-              <Route path="/createOrganization/addmembers">
+
+              <Route path="/createOrganization/addmembers" exact>
                 <AddMembers ParentHistory={history} />
               </Route>
             </Switch>

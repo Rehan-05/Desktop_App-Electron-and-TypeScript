@@ -128,6 +128,7 @@ margin-left:5px;
   background-color: #F8F8F8 ;
   border: 1px solid  #B5B2B2;
   border-radius: 10px;
+  overflow: hidden;
   // margin: 0px 5% 0px 5%;
 
 }
@@ -151,20 +152,34 @@ margin-left:5px;
   display: flex;
   flex-direction: row;
   height:"10px";
+
 }
 
 .Create-Project-Div{
   display: flex;
   flex-direction: row;
-  height:"20px";
+  height:60px;
   margin-top: 12px;
+  border: none;
+  width:95%;
+  background-color:transparent;
+  align-items: center;
+  border-radius: 10px;
+  margin: 10px;
+  z-index: 10;
 }
+.Create-Project-Div:hover{
 
+  background-color: #fff;
+  .Left-Create-Project{
+    background-color: #fff;
+  color: #333;
+  }
+}
 .Left-Create-Project{
-      margin-left:25px;
-      height:65px;
+      height:50px;
       background-color:#F3F3F3;
-      width:70px;
+      width:50px;
       border-width:1px;
       border-color:#A6ABC8;
       border-style:dotted;
@@ -181,8 +196,9 @@ margin-left:5px;
 }
 
 .People-project-Div{
-  height: 320px;
-  width: 970px;
+  padding:10px;
+  width: 90%;
+  overflow: hidden;
   background-color: #F3F3F3;
   margin: 0% 3% 0% 3%;
   border-radius: 15px;
@@ -193,6 +209,8 @@ margin-left:5px;
   display:flex;
   flex-direction: row;
   margin-left:30px;
+  overflow: hidden;
+  overflow-x: scroll;
 
 }
 
@@ -216,6 +234,15 @@ margin-left:5px;
 .Profile-Image{
     height: 40px;
     width: 40px;
+
+
+}
+.Profile-Image-icon{
+  height: 50px;
+  width: 50px;
+  border: 1px #B5B2B2 dashed;
+  border-radius: 50%;
+
 }
 
 .View-Profile-Button{

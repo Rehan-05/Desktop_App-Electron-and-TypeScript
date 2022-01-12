@@ -39,6 +39,7 @@ export default function index() {
     <div  className="row-view">
       <Router>
         {/* side Bar start */}
+
         {displaySlide == 'none' && (
           <button
             style={{
@@ -48,7 +49,7 @@ export default function index() {
               left: 20,
               backgroundColor: 'transparent',
               outline: 'none',
-
+              zIndex:100,
             }}
             onClick={handleSlide}
           >
@@ -117,12 +118,17 @@ export default function index() {
           </button>
         </div>
 
-        <div className="main-container">
+        <div className="main-container" style={{width:displaySlide=="none"?"100%":"75%"}}>
           <Switch>
 
             <Route path="/mytask" component={MyTask}  />
-            <Route path="/inbox"  ><Projects sideBar={displaySlide} /></Route>
-            <Route component={Home} exact  />
+            <Route path="/Projects"  >
+              <Projects ParentHistory={history} sideBar={displaySlide} />
+              </Route>
+
+            <Route  exact>
+            <Home ParentHistory={history} sideBar={displaySlide} />
+            </Route>
 
           </Switch>
         </div>
