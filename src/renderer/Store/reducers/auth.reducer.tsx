@@ -22,7 +22,7 @@ function CreateAuthReucers() {
   const user = (state = UserData, action: any) => {
 
     const { type, user } = action;
-    debugger
+
     switch (type) {
       case 'AUTH_ON_ERROR':
       case 'AUTH_ON_INIT':

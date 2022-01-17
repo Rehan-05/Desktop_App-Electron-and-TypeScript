@@ -238,6 +238,7 @@
     "react-hook-form": "^7.19.5",
     "react-icons": "^4.3.1",
     "react-onclickoutside": "^6.12.1",
+    "react-phone-input-2": "^2.14.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
     "react-trello": "^2.2.11",

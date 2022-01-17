@@ -3,7 +3,7 @@ import { Col, Row, Container } from 'react-bootstrap';
 // import Button from 'renderer/Components/Button';
 import InputButton from 'renderer/Components/InputButton';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import { AUTH, OrgIFormInput,IFormInput } from '../../../Types/User.types';
+import { auth, OrgIFormInput,IFormInput, AUTH } from '../../../Types/User.types';
 import React from 'react';
 import { CreateOrganization } from 'renderer/Store/Actions/Organization.action';
 import { useDispatch, useSelector } from 'react-redux';

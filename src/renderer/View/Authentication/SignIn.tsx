@@ -19,7 +19,7 @@ import { useDispatch,
 export default function SignIn() {
 
   const dispatch=useDispatch();
-  const ServerError=useSelector(({auth}:AUTH)=>{return auth.login.error})
+  const ServerError=useSelector(({auth}:AUTH)=>{return auth.login?.error})
 
   const { register,formState: { errors }, handleSubmit }=useForm<IFormInput>({criteriaMode:'all'});
   const onSubmit: SubmitHandler<IFormInput> = Data => {
@@ -36,8 +36,8 @@ export default function SignIn() {
    else if(errors.userName){
      SetErrorMessage(errors?.userName?.message||'')
    }
-   else if(errors.Password){
-      SetErrorMessage(errors?.Password?.message||'')
+   else if(errors.password){
+      SetErrorMessage(errors?.password?.message||'')
    }
  },[errors])
 
@@ -101,7 +101,7 @@ export default function SignIn() {
           <Col>
             <input type="password"  id="Password" className="inputStyle"
             onFocus={()=>SetErrorMessage('')}
-            {...register("Password",
+            {...register("password",
             {
               required: "This input is required.",
               pattern: {

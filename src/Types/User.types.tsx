@@ -1,9 +1,13 @@
 export interface IFormInput {
-  Email?: string;
-  Password?: string;
+  email?: string;
+  password?: string;
   userName?: string;
   name?: string;
+  phone?: string;
+  company?: string;
+  profilePic?: string;
   rememberme?: number;
+  role?:string;
 }
 
 
@@ -29,6 +33,7 @@ export interface auth{
   }
 }
 
+
 export interface AUTH{
-  auth:auth
-  }
+  auth: auth
+}
