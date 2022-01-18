@@ -48,7 +48,7 @@ export default function SignIn() {
       <div>
         <div className="form-heading">Sign In</div>
 
-        <Button
+        {/* <Button
         icon={true}
           iconName="google"
           font="MaterialCommunityIcons"
@@ -61,9 +61,9 @@ export default function SignIn() {
           }}
           title=" Sign with Google"
           color="#FFFFFF"
-        />
+        /> */}
 
-        <Button
+        {/* <Button
         icon={true}
           buttonStyle={{
             borderWidth: 1,
@@ -75,7 +75,7 @@ export default function SignIn() {
           font="EvilIcons"
           className="CusomtButtonTitle"
           title=" Sign with Facebook"
-        />
+        /> */}
 
         <div className="textgray">Or sign in using your email address</div>
 
