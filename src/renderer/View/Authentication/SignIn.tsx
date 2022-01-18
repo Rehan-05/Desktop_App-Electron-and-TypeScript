@@ -13,6 +13,7 @@ import {signin} from '../../Store/Actions/auth.action'
 import { useDispatch,
   useSelector
  } from 'react-redux';
+import { Backdrop, CircularProgress } from '@mui/material';
 
 
 
@@ -40,7 +41,19 @@ export default function SignIn() {
       SetErrorMessage(errors?.password?.message||'')
    }
  },[errors])
+ const isCheckingR = useSelector(({ auth }: AUTH) => {
+  return auth.login?.isChecking;
+});
+if(isCheckingR)
+{
+  return(<Backdrop
+    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    open={isCheckingR}
 
+  >
+    <CircularProgress color="inherit" />
+  </Backdrop>)
+}
   return (
     <div className="AuthContainer">
       {/* Cretae Accoutn Tag */}
@@ -89,11 +102,12 @@ export default function SignIn() {
           <Col>
             <input type="text" id="email" className="inputStyle"
             onFocus={()=>SetErrorMessage('')}
+            placeholder="example@company.pa.com"
             {...register("userName", {
               required: "This input is required.",
               pattern: {
-                value: /\w+/,
-                message: "UserName contain alphabate and numbers only."
+                value: /\w+@[a-zA-Z]+.pa.com/,
+                message: "UserName is your company mail \n john@google.pa.com."
               }
             })}
             />

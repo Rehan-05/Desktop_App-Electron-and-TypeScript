@@ -10,6 +10,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import React from 'react';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import { Backdrop, CircularProgress } from '@mui/material';
 
 import { inputModel,validateModel } from './DataModel';
 
@@ -120,6 +121,19 @@ export default function Register() {
     }
 
   };
+const isCheckingR = useSelector(({ auth }: AUTH) => {
+    return auth.register?.isChecking;
+  });
+  if(isCheckingR)
+  {
+    return(<Backdrop
+      sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open={isCheckingR}
+
+    >
+      <CircularProgress color="inherit" />
+    </Backdrop>)
+  }
 
   return (
     <div className="AuthContainer">
@@ -178,6 +192,7 @@ export default function Register() {
             placeholder="e.g:- John"
             name="company"
             value={model.company}
+            onFocus={()=>SetErrorMessage('')}
             onChange={handleCompanyNameChange}
                 // value: /[a-zA-Z]{3,}/,
                 // message: "company name contain only alphabate."
@@ -208,6 +223,7 @@ export default function Register() {
             placeholder="irtza@gmail.com"
             name="email"
             value={model.email}
+            onFocus={()=>SetErrorMessage('')}
             onChange={e =>{
                setModel({ ...model, "email": e.target.value })
               const re = /^[\w]{3,}@[a-z]*\.[a-zA-Z]*/;

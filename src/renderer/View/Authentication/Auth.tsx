@@ -20,20 +20,18 @@ export default function Auth() {
     debugger
     return auth.user;
   });
-  const isChecking = useSelector(({ auth }: AUTH) => {
-    return auth.login?.isChecking;
-  });
-  const isCheckingR = useSelector(({ auth }: AUTH) => {
-    return auth.register?.isChecking;
-  });
+  // const isChecking = useSelector(({ auth }: AUTH) => {
+  //   return auth.login?.isChecking;
+  // });
+
   const history = useHistory();
-  if (isChecking || isCheckingR) {
-    return (
-      <div className="Container">
-        <Loader />
-      </div>
-    );
-  }
+  // if (isChecking || isCheckingR) {
+  //   return (
+  //     <div className="Container">
+  //       <Loader />
+  //     </div>
+  //   );
+  // }
   if (user) {
     return <Redirect to="/dashboard" />;
   }
