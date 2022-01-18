@@ -26,7 +26,7 @@ const signin=(Data:IFormInput)=> (dispatch: any)=>{
 const register=(Data:IFormInput)=> (dispatch: any)=>{
 
   dispatch({type:"AUTH_REGISTER_INIT"})
-
+debugger
    getData.Register({
     username: Data.userName,
     password: Data.password,
