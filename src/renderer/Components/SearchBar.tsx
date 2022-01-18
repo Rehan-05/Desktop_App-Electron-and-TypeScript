@@ -1,22 +1,23 @@
 import {
   createStyles,
-  fade,
+  makeStyles
+} from '@mui/styles';
+import {
   Theme,
-  makeStyles,
-} from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search';
-import InputBase from '@material-ui/core/InputBase';
+} from '@mui/material';
+import SearchIcon from '@mui/material/Icon';
+import InputBase from '@mui/material/InputBase';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
+const useStyles = makeStyles((theme: Theme) =>{
+  return createStyles({
     search: {
       position: 'relative',
       borderRadius: '5px',
       borderColor:'#627B87',
       backgroundColor: "#F6F6FB",
-      '&:hover': {
-        backgroundColor: fade(theme.palette.common.white, 0.25),
-      },
+      // '&:hover': {
+      //   backgroundColor: fade(theme.palette.common.white, 0.25),
+      // },
       marginLeft: 0,
       width: '100%',
       [theme.breakpoints.up('sm')]: {
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '100%',
     },
   })
-);
+});
 
 export default function SearchBar() {
   const classes = useStyles();

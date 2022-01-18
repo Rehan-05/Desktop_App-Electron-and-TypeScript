@@ -12,6 +12,7 @@ import {
   Route,
   Switch,
   useHistory,
+  useLocation,
   useParams,
 } from 'react-router-dom';
 
@@ -20,8 +21,14 @@ import TimeLine from './gantt';
 import Board from './Board';
 
 
-function Projects({ sideBar = 'flex' }) {
+function Projects({ sideBar = 'flex',...props }) {
   const [selLink,setSelLink] = useState("/board");
+
+  const {state} = useLocation<any>();
+  const {item}:any = state;
+  useEffect(() => {
+
+  },[])
   return (
     <Router>
     <div className="main-container-sub">
@@ -35,7 +42,7 @@ function Projects({ sideBar = 'flex' }) {
               {/*  Project Icon */}
               <Icon font="FontAwesome" name="tasks" size={25} color="#FFFFFF" />
             </div>
-            <div className="Project-title">Prject Name</div>
+            <div className="Project-title">{item.projectTitle}</div>
             <DropDownMenuSelect
               values={option}
               handleOnClick={() => {

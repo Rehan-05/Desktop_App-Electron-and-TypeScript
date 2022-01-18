@@ -13,8 +13,9 @@ function Dropdown(props:any) {
       </div>
       {isActive && (
         <div className="dropdown-content">
-          {options.map((option) => (
+          {options.map((option,index) => (
             <div
+            key={index+"-"}
               onClick={(e) => {
                 props.setSelected(option);
                 setIsActive(false);

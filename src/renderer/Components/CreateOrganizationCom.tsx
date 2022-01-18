@@ -7,6 +7,7 @@ import { Col, Row } from 'react-bootstrap';
 import InputButton from 'renderer/Components/InputButton';
 import { useForm ,Controller,SubmitHandler} from "react-hook-form";
 import {IFormInput,
+  auth,
   AUTH
 } from '../../Types/User.types';
 import React from 'react';

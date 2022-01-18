@@ -7,7 +7,7 @@ const signin=(Data:IFormInput)=> (dispatch: any)=>{
 
    getData.SignIn({
     username: Data.userName,
-    password: Data.Password,
+    password: Data.password,
   }).then(data=>{
 
     dispatch({type:"AUTH_LOGIN_SUCCESS",user:{...data.data,status:data.status,isLoggedIn: true, }})
@@ -29,12 +29,13 @@ const register=(Data:IFormInput)=> (dispatch: any)=>{
 
    getData.Register({
     username: Data.userName,
-    password: Data.Password,
-    email:Data.Email,
-    name:Data.name
+    password: Data.password,
+    email:Data.email,
+    name:Data.name,
+    phone:Data.phone,
+    company:Data.company,
   }).then(data=>{
-
-    dispatch({type:"AUTH_REGISTER_SUCCESS"})
+        dispatch({type:"AUTH_REGISTER_SUCCESS"})
     dispatch(signin(Data))
     return data;
   })
@@ -45,7 +46,7 @@ const register=(Data:IFormInput)=> (dispatch: any)=>{
 }
 
 const logout=()=> (dispatch: any)=>{
-  debugger;
+
   localStorage.removeItem('User');
     dispatch({type:"AUTH_LOGOUT_SUCCESS"})
   }

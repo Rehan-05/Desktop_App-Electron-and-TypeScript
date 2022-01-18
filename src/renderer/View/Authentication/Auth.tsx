@@ -15,7 +15,9 @@ import { AUTH } from 'Types/User.types';
 import Loader from 'renderer/Components/Loader/Loader';
 
 export default function Auth() {
-  const user = useSelector(({ auth }: AUTH) => {
+
+  const user = useSelector(({auth}:AUTH) => {
+    debugger
     return auth.user;
   });
   const isChecking = useSelector(({ auth }: AUTH) => {

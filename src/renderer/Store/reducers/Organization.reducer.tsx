@@ -5,7 +5,7 @@ import { combineReducers } from 'redux';
 
 const OrganizationReducer = () => {
  const organization = (state =null  , action:any) => {
-  debugger
+
   const { type, organization } = action;
   switch (type) {
     case 'CREATE_ORGANIZATION_INIT':

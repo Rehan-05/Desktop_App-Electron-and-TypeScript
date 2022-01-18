@@ -219,8 +219,8 @@
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@hookform/error-message": "^2.0.0",
-    "@material-ui/icons": "^4.11.2",
     "@mui/material": "^5.1.1",
+    "@mui/styles": "^5.2.3",
     "@reduxjs/toolkit": "^1.6.2",
     "@types/frappe-gantt": "^0.4.2",
     "axios": "^0.24.0",
@@ -238,14 +238,14 @@
     "react-hook-form": "^7.19.5",
     "react-icons": "^4.3.1",
     "react-onclickoutside": "^6.12.1",
+    "react-phone-input-2": "^2.14.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
     "react-trello": "^2.2.11",
     "react-web-vector-icons": "^1.0.2",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.0",
-    "regenerator-runtime": "^0.13.9",
-    "yarn": "^1.22.17"
+    "regenerator-runtime": "^0.13.9"
   },
   "devEngines": {
     "node": ">=14.x",
