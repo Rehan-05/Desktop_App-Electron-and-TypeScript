@@ -197,7 +197,7 @@ margin-left:5px;
 
 .People-project-Div{
   padding:10px;
-  width: 90%;
+  width: 94%;
   overflow: hidden;
   background-color: #F3F3F3;
   margin: 0% 3% 0% 3%;
@@ -209,14 +209,13 @@ margin-left:5px;
   display:flex;
   flex-direction: row;
   margin-left:30px;
-  overflow: hidden;
-  overflow-x: scroll;
+  margin-top: 30px;
 
 }
 
 .people-div{
-   height: 250px;
-   width:230px;
+   height: 230px;
+   width:210px;
    margin:15px 10px 3px 0px;
    border: 1px solid  #B5B2B2;
    border-radius: 10px;
@@ -257,4 +256,48 @@ margin-left:5px;
 .View-Button:hover{
     background-color: #F3F3F3 ;
     border-color: cornsilk;
+}
+
+
+
+/* Popup style */
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.box {
+  position: relative;
+  width: 40%;
+  margin: 0 auto;
+  height: auto;
+  z-index: 1;
+  max-height: 120vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: rgb(37, 160, 231);
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid rgb(31, 4, 128);
+  overflow: auto;
+}
+
+.close-icon {
+  content: 'x';
+  cursor: pointer;
+  position: fixed;
+  right: calc(32% - 50px);
+  top: calc(100vh - 85vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
 }

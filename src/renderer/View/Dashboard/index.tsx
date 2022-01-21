@@ -12,14 +12,16 @@ import {
   useParams,
 } from 'react-router-dom';
 import Home from './Home';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'renderer/Store/Actions/auth.action';
 import MyTask from './MyTask';
 import SideBarButton from 'renderer/Components/SideBarButton';
 import { useEffect, useRef, useState } from 'react';
 import Projects from './Projects';
 import { useWindowSize  } from 'renderer/Util/useWindowSize';
-import {sideBarButtons} from './SideBarButtonsSetails'
+import {sideBarButtons} from './SideBarButtonsSetails';
+import {getProjects,CreateProjects} from 'renderer/Store/Actions/Project.action';
+import { AUTH } from 'Types/User.types';
 
 
 export default function index() {
@@ -29,8 +31,14 @@ export default function index() {
   const [btnName, setBtnName] = useState('/');
   const [displaySlide, setDisplaySlide] = useState('flex');
   const [width, height] = useWindowSize();
+  const user = useSelector(({auth}:AUTH)=>auth.user);
+
 
   const ref = useRef();
+
+  useEffect(() => {
+    dispatch(getProjects(user.company,user.accessToken));
+  });
 
   const handleSlide = () => {if (displaySlide == 'flex') {setDisplaySlide('none');} else {setDisplaySlide('flex')}};
   useEffect(() => {width<=1200?setDisplaySlide('none'):setDisplaySlide('flex')} , [width]);
