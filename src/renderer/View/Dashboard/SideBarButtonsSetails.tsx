@@ -180,8 +180,8 @@ export const option = {
 };
 export const links = [
   {
-    to: '/overview',
-    label: 'Overview',
+    to: '/documentation',
+    label: 'Documentation',
   },
   {
     to: '/list',
