@@ -11,6 +11,7 @@ import InputButton from 'renderer/Components/InputButton';
 import DropDownMenuSelect from 'renderer/Components/DropDownMenue';
 import { option } from './SideBarButtonsSetails';
 // import SearchBar from 'renderer/Components/SearchBar';
+import AddProjectForm from 'renderer/View/CreateOrganization/addProjectForm';
 
 import { useHistory } from 'react-router-dom';
 import {ProjectCollabrator} from './SideBarButtonsSetails'
@@ -23,6 +24,7 @@ const Home = (props: any) => {
   let history = useHistory();
   const dispatch = useDispatch();
   const projects = useSelector(({Project}:any)=>Project.data?.projects);
+  const [isOpen,setIsOpen] = useState(false);
 
   return (
     <div
@@ -36,6 +38,8 @@ const Home = (props: any) => {
     >
       <div className="main-container-sub-Home">
         {/*  Top Header  */}
+      <AddProjectForm isOpen={isOpen} setIsOpen={setIsOpen} />
+
         <div
           className="Home-topbar"
           style={{
@@ -280,8 +284,9 @@ const Home = (props: any) => {
               }}
             >
               <button
-                onClick={() => {
-                  props.ParentHistory.push('/createOrganization');
+                onClick={(props:any) => {
+                  // props.ParentHistory.push('/createOrganization');
+                  setIsOpen(!isOpen);
                 }}
                 className="Create-Project-Div"
               >
