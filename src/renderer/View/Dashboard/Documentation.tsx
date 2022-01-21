@@ -10,13 +10,11 @@ function Documentation() {
   const onFileChange = (event: any) => {
     // Update the state
 
-	if(event.target.files[0]?.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+	// if(event.target.files[0]?.name.match(/\.(jpg|jpeg|png|gif)$/)) {
 		setSelectedFile(event.target.files[0]);
 		setUploadStatus(null);
-	}
-	else{
-		setUploadStatus("Please select a valid image file");
-	}
+
+
   };
 
   // On file upload (click the upload button)
@@ -74,7 +72,7 @@ function Documentation() {
       {fileData()}
       <div>
         <input type="file" onChange={onFileChange} />
-        <button disabled={selectedFile?.name.match(/\.(jpg|jpeg|png|gif)$/)} onClick={onFileUpload}>Upload!</button>
+        <button  onClick={onFileUpload}>Upload!</button>
       </div>
     </div>
   );
