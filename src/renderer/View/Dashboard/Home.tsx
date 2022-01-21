@@ -11,13 +11,18 @@ import InputButton from 'renderer/Components/InputButton';
 import DropDownMenuSelect from 'renderer/Components/DropDownMenue';
 import { option } from './SideBarButtonsSetails';
 // import SearchBar from 'renderer/Components/SearchBar';
-import { projects } from './SideBarButtonsSetails';
+
 import { useHistory } from 'react-router-dom';
 import {ProjectCollabrator} from './SideBarButtonsSetails'
+import Grid from '@mui/material/Grid';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 const Home = (props: any) => {
   const [selected, setSelected] = useState('Rehan');
   let history = useHistory();
+  const dispatch = useDispatch();
+  const projects = useSelector(({Project}:any)=>Project.data?.projects);
 
   return (
     <div
@@ -141,6 +146,7 @@ const Home = (props: any) => {
                 <DropDownMenuSelect
                   values={option}
                   handleOnClick={() => {
+
                     console.log('drop down');
                   }}
                 />
@@ -300,7 +306,7 @@ const Home = (props: any) => {
                 </div>
               </button>
               {/* list */}
-              {projects.map((item, index) => {
+              {projects?.map((item:any, index:any) => {
                 return (
                   <button
                     key={item.projectTitle + ' ' + index}
@@ -314,7 +320,7 @@ const Home = (props: any) => {
                   >
                     <div className="Left-Create-Project">
                       <Icon
-                        name={item.pIconName}
+                        name={item.pIconName||"bars"}
                         font="AntDesign"
                         color="#898686"
                         size={25}
@@ -381,6 +387,9 @@ const Home = (props: any) => {
           </div>
 
           <div className="People-project">
+
+            <Grid container spacing={{ xs: 2, md: 3 }} marginTop={20} columns={{ md:16 }}>
+
             <div className="people-div">
               <div className="people-inner-div">
               <div style={{ marginBottom: '10px',textAlign:'center'}} className="Profile-Image-icon" >
@@ -395,10 +404,10 @@ const Home = (props: any) => {
                     fontStyle: 'normal',
                   }}
                 >
-                  Invites
+                  Add
                 </div>
-                <div style={{ fontSize: '14px', fontFamily: 'Poppins',textAlign: 'center' }}>
-                  Invites your team Members and add them into project.
+                <div style={{ fontSize: '10px', fontFamily: 'Poppins',textAlign: 'center' }}>
+                  Add your team Members.
                 </div>
 
                 <div className="View-Profile-Button">
@@ -414,6 +423,7 @@ const Home = (props: any) => {
 
             {ProjectCollabrator.map((item,index)=>{
               return(
+
               <div key={index+""+item.name} className="people-div">
               <div className="people-inner-div">
                 <div style={{ marginBottom: '10px' }}>
@@ -442,9 +452,11 @@ const Home = (props: any) => {
                   />
                 </div>
               </div>
-            </div>)
-            })}
+            </div>
 
+            )
+            })}
+            </Grid>
 
           </div>
         </div>
