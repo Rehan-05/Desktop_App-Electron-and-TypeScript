@@ -1,103 +1,83 @@
 import axios from 'axios';
 
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
-class Documentation extends Component {
+function Documentation() {
 
-	state:any = {
+  const [selectedFile, setSelectedFile] = React.useState<any>(null);
+  const [uploadStatus, setUploadStatus] = React.useState<any>(null);
 
-	// Initially, no file is selected
-	selectedFile: null,
-  uploadStatus:null
-	};
+  const onFileChange = (event: any) => {
+    // Update the state
 
-	// On file select (from the pop up)
-	onFileChange = (event:any) => {
-
-	// Update the state
-	this.setState({ selectedFile: event.target.files[0] ,uploadStatus:null});
-
-	};
-
-	// On file upload (click the upload button)
-	onFileUpload = () => {
-
-	// Create an object of formData
-	const file = new FormData();
-
-	// Update the formData object
-	file.append("file", this.state.selectedFile, this.state.selectedFile.name);
-
-
-	// Details of the uploaded file
-	console.log(this.state.selectedFile);
-  const config = {
-    headers: {
-      'content-type': 'multipart/form-data',
-    },
+	if(event.target.files[0]?.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+		setSelectedFile(event.target.files[0]);
+		setUploadStatus(null);
+	}
+	else{
+		setUploadStatus("Please select a valid image file");
+	}
   };
 
-  const url= "http://localhost:5000/api/File/upload";
-	// Request made to the backend api
-	// Send formData object
-	axios.post(url,file,config).then(response => this.setState({uploadStatus:response.data,selectedFile:null}));
-	};
+  // On file upload (click the upload button)
+  const onFileUpload = () => {
+    const file = new FormData();
+    file.append('file', selectedFile, selectedFile.name);
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    };
+    const url = 'http://localhost:5000/api/File/upload';
+    // Request made to the backend api
+    // Send formData object
+    axios
+      .post(url, file, config)
+      .then((response) => {
 
-	// File content to be displayed after
-	// file upload is complete
-	fileData = () => {
+        setUploadStatus("Successfully uploaded you document");
+		setSelectedFile(null);
+      })
+      .catch((err) => {
+        setUploadStatus(err.message);
+      });
+  };
 
-	if (this.state.selectedFile) {
+  // File content to be displayed after
+  // file upload is complete
+  const fileData = () => {
 
-		return (
-		<div>
-			<h2>File Details:</h2>
+    if (selectedFile) {
+      return (
+        <div>
+          <h2>File Details:</h2>
 
-<p>File Name: {this.state.selectedFile.name}</p>
+          <p>File Name: {selectedFile?.name}</p>
 
+          <p>File Type: {selectedFile.type}</p>
 
-<p>File Type: {this.state.selectedFile.type}</p>
-
-
-<p>
-			Last Modified:{" "}
-			{this.state.selectedFile.lastModifiedDate.toDateString()}
-			</p>
-
-		</div>
-		);
-	} else {
-		return (
-		<div>
-			<br />
-			<h4>Choose before Pressing the Upload button</h4>
-		</div>
-		);
-	}
-	};
-
-
-	render() {
-    if(this.state.uploadStatus!=null)
-    {
-      return(
-        <h1>Successfully uploaded you document</h1>
-      )
+          <p>Last Modified: {selectedFile.lastModifiedDate.toDateString()}</p>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <br />
+          <h4>{uploadStatus==null?"Choose before Pressing the Upload button":uploadStatus}</h4>
+        </div>
+      );
     }
-	return (
-		<div>
-{this.fileData()}
-			<div>
-				<input type="file" onChange={this.onFileChange} />
-				<button onClick={this.onFileUpload}>
-				Upload!
-				</button>
-			</div>
+  };
 
-		</div>
-	);
-	}
+  return (
+    <div>
+      {fileData()}
+      <div>
+        <input type="file" onChange={onFileChange} />
+        <button disabled={selectedFile?.name.match(/\.(jpg|jpeg|png|gif)$/)} onClick={onFileUpload}>Upload!</button>
+      </div>
+    </div>
+  );
 }
 
 export default Documentation;
-
