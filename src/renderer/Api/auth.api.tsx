@@ -41,6 +41,7 @@ class ApiCntainerClass {
       'Content-Type': 'application/json',
       'Authorization': token
     }
+    debugger;
   return http.post('/Project/create', data,{headers:header});
   }
   GetProjects(company:string,token:string) {
