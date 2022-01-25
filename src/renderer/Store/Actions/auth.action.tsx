@@ -6,7 +6,7 @@ const signin=(Data:IFormInput)=> (dispatch: any)=>{
   dispatch({type:"AUTH_LOGIN_INIT"})
 
    getData.SignIn({
-    username: Data.userName+"@"+Data.company+".pa.com",
+    username: Data.userName,
     password: Data.password,
   }).then(data=>{
 
@@ -36,6 +36,7 @@ debugger
     company:Data.company,
   }).then(data=>{
         dispatch({type:"AUTH_REGISTER_SUCCESS"})
+        Data.userName=Data.userName+"@"+Data.company+".pa.com";
     dispatch(signin(Data))
     return data;
   })
