@@ -17,6 +17,8 @@ import { useHistory } from 'react-router-dom';
 import {ProjectCollabrator} from './SideBarButtonsSetails'
 import Grid from '@mui/material/Grid';
 import { useDispatch, useSelector } from 'react-redux';
+import {getProjects,CreateProjects} from 'renderer/Store/Actions/Project.action';
+
 
 
 const Home = (props: any) => {
@@ -25,6 +27,7 @@ const Home = (props: any) => {
   const dispatch = useDispatch();
   const projects = useSelector(({Project}:any)=>Project.data?.projects);
   const [isOpen,setIsOpen] = useState(false);
+  const user = useSelector(({auth}:any)=>auth.user);
 
   return (
     <div
@@ -136,7 +139,7 @@ const Home = (props: any) => {
               marginTop: '10px',
             }}
           >
-            <h1>Good Evening Rehan</h1>
+            <h1>Good Evening {user?.name}</h1>
           </div>
 
           <div className="Top-Team_Detail">
@@ -226,7 +229,7 @@ const Home = (props: any) => {
               <div className="Avatar-Name-Icon">
                 <div style={{ marginLeft: '10px', marginTop: '10px' }}>
                   <h6 style={{ fontSize: '20px', fontWeight: 'bold' }}>
-                    Rehan Asghar
+                   {user?.name}
                   </h6>
                 </div>
                 <div style={{ marginLeft: '10px', marginTop: '8px' }}>
@@ -237,7 +240,8 @@ const Home = (props: any) => {
           </div>
           {/* Right Phase Create Project Phase  */}
           <div className="Divide-Phase">
-            <div className="Top-Left-Divide-Phase">
+            <div className="Top-Left-Divide-Phase jc_sb">
+              <div className="Top-Left-Divide-Phase">
               <div style={{ marginTop: 15, marginLeft: '25px' }}>
                 <h4 style={{ fontWeight: 'bold', fontSize: '20px' }}>
                   Projects
@@ -271,6 +275,11 @@ const Home = (props: any) => {
                   />
                 </div>
               </div>
+              </div>
+
+              <button className="btn" onClick={()=>dispatch(getProjects(user.company,user.accessToken))}>
+              <Icon name="refresh" size={25} color="#000" font="MaterialCommunityIcons" />
+              </button>
             </div>
             <div className="sepratorRight" />
             {/* Projects List */}

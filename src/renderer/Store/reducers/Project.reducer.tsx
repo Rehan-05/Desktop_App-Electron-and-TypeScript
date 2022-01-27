@@ -5,7 +5,7 @@ import { combineReducers } from 'redux';
 
 
 const ProjectReducer = () => {
- const data = (state =null , action:any) => {
+ const data = (state =[] , action:any) => {
   debugger;
   const { type, projects } = action;
   switch (type) {
