@@ -61,7 +61,7 @@ if(isCheckingR)
       <div>
         <div className="form-heading">Sign In</div>
 
-        <Button
+        {/* <Button
         icon={true}
           iconName="google"
           font="MaterialCommunityIcons"
@@ -74,9 +74,9 @@ if(isCheckingR)
           }}
           title=" Sign with Google"
           color="#FFFFFF"
-        />
+        /> */}
 
-        <Button
+        {/* <Button
         icon={true}
           buttonStyle={{
             borderWidth: 1,
@@ -88,7 +88,7 @@ if(isCheckingR)
           font="EvilIcons"
           className="CusomtButtonTitle"
           title=" Sign with Facebook"
-        />
+        /> */}
 
         <div className="textgray">Or sign in using your email address</div>
 
