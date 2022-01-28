@@ -12,13 +12,13 @@ import DropDownMenuSelect from 'renderer/Components/DropDownMenue';
 import { option } from './SideBarButtonsSetails';
 // import SearchBar from 'renderer/Components/SearchBar';
 import AddProjectForm from 'renderer/View/CreateOrganization/addProjectForm';
-
 import { useHistory } from 'react-router-dom';
 import {ProjectCollabrator} from './SideBarButtonsSetails'
 import Grid from '@mui/material/Grid';
 import { useDispatch, useSelector } from 'react-redux';
 import {getProjects,CreateProjects} from 'renderer/Store/Actions/Project.action';
-
+import DataGridDemo from 'renderer/Components/PeopleGrid_View/Home_Grid_View';
+import Button from 'renderer/Components/Button';
 
 
 const Home = (props: any) => {
@@ -359,50 +359,60 @@ const Home = (props: any) => {
         </div>
 
         <div className="People-project-Div">
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <div
-              style={{
-                margin: '20px 0px  0px 40px',
-                fontSize: '25px',
-                fontWeight: 'bold',
-              }}
-            >
-              People
-            </div>
-
-            <div
-              style={{
-                marginLeft: '25px',
-                display: 'flex',
-                flexDirection: 'row',
-              }}
-            >
-              <div>
-                <h4
+          <div style={{ width:'100%',height:50, display:'flex', flexDirection: 'row',justifyContent:'space-between'}}>
+            <div style={{display:'flex',flexDirection:'row',}}>
+                <div
                   style={{
-                    marginTop: 33,
-                    fontWeight: 'bold',
-                    fontSize: '15px',
-                    color: '#B5B2B2',
-                  }}
-                >
-                  Frequent Collaborator
-                </h4>
-              </div>
-              <div style={{ marginTop: 27, marginLeft: '15px' }}>
-                <DropDownMenuSelect
-                  values={option}
-                  handleOnClick={() => {
-                    console.log('drop down');
-                  }}
-                />
-              </div>
+                      margin: '20px 0px  0px 40px',
+                      fontSize: '25px',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                   People
+                </div>
+                <div
+                    style={{
+                      marginLeft: '25px',
+                      display: 'flex',
+                      flexDirection: 'row',
+                    }} >
+                    <div>
+                      <h4
+                        style={{
+                          marginTop: 33,
+                          fontWeight: 'bold',
+                          fontSize: '15px',
+                          color: '#B5B2B2',
+                        }}
+                      >
+                        Frequent Collaborator
+                      </h4>
+                    </div>
+                    <div style={{ marginTop: 27, marginLeft: '15px' }}>
+                      <DropDownMenuSelect
+                        values={option}
+                        handleOnClick={() => {
+                          console.log('drop down');
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div style={{marginTop:'0.5rem'}}>
+                          <InputButton
+                              className="Create-Button"
+                              buttonStyle={{
+                              backgroundImage: ` linear-gradient(to right, #0905AF 0%, #0905AF 47%, #0905AF 100%)`,
+                              boxShadow: `3.994px 22.651px 57px rgba(97, 73, 205, 0.259)`,
+                              color: '#FFFFFF',
+                              width:100}} title=" ADD" />
+                </div>
             </div>
-          </div>
 
           <div className="People-project">
+             <DataGridDemo />
 
-            <Grid container spacing={{ xs: 2, md: 3 }} marginTop={20} columns={{ md:16 }}>
+            {/* <Grid container spacing={{ xs: 2, md: 3 }} marginTop={20} columns={{ md:16 }}>
 
             <div className="people-div">
               <div className="people-inner-div">
@@ -470,7 +480,7 @@ const Home = (props: any) => {
 
             )
             })}
-            </Grid>
+            </Grid> */}
 
           </div>
         </div>
