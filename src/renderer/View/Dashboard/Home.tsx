@@ -399,7 +399,7 @@ const Home = (props: any) => {
                   </div>
                 </div>
                 <div style={{marginTop:'0.5rem'}}>
-                          <InputButton
+                              <InputButton
                               className="Create-Button"
                               buttonStyle={{
                               backgroundImage: ` linear-gradient(to right, #0905AF 0%, #0905AF 47%, #0905AF 100%)`,
