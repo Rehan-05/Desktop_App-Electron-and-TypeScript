@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme: Theme) =>{
   })
 });
 
-export default function SearchBar() {
+ const  Search = () => {
   const classes = useStyles();
   return (
     <div className={classes.search}>
@@ -66,3 +66,5 @@ export default function SearchBar() {
     </div>
   );
 }
+
+export default Search;
