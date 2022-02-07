@@ -1,24 +1,22 @@
 import React, { useState, Component } from 'react';
 import { TextField, IconButton } from '@mui/material';
-// import SearchBar from 'renderer/Components/SearchBar';
+// import Search from 'renderer/Components/SearchBar';
 import Dropdown from 'renderer/Components/DropDown';
 import Icon from 'react-web-vector-icons';
 import AccountCircle from '@mui/material/Icon';
-import { relative } from 'path/posix';
+// import { relative } from 'path/posix';
 import AvatarGroup from 'react-avatar-group';
-import { Profile } from '../../Constant/Images';
+// import { Profile } from '../../Constant/Images';
 import InputButton from 'renderer/Components/InputButton';
 import DropDownMenuSelect from 'renderer/Components/DropDownMenue';
 import { option } from './SideBarButtonsSetails';
-// import SearchBar from 'renderer/Components/SearchBar';
 import AddProjectForm from 'renderer/View/CreateOrganization/addProjectForm';
 import { useHistory } from 'react-router-dom';
-import {ProjectCollabrator} from './SideBarButtonsSetails'
-import Grid from '@mui/material/Grid';
+// import {ProjectCollabrator} from './SideBarButtonsSetails'
 import { useDispatch, useSelector } from 'react-redux';
 import {getProjects,CreateProjects} from 'renderer/Store/Actions/Project.action';
 import DataGridDemo from 'renderer/Components/PeopleGrid_View/Home_Grid_View';
-import Button from 'renderer/Components/Button';
+// import Button from 'renderer/Components/Button';
 
 
 const Home = (props: any) => {
@@ -63,7 +61,7 @@ const Home = (props: any) => {
             </h4>
           </div>
           <div style={{ width: '50%', marginTop: '22px' }}>
-            {/* <SearchBar /> */}
+            {/* <Search /> */}
           </div>
           <div style={{ width: '40%' }}>
             <div
@@ -409,80 +407,10 @@ const Home = (props: any) => {
                 </div>
             </div>
 
-          <div className="People-project">
-             <DataGridDemo />
-
-            {/* <Grid container spacing={{ xs: 2, md: 3 }} marginTop={20} columns={{ md:16 }}>
-
-            <div className="people-div">
-              <div className="people-inner-div">
-              <div style={{ marginBottom: '10px',textAlign:'center'}} className="Profile-Image-icon" >
-                <Icon name="addusergroup" font="AntDesign" size={25} color="#000" />
-                </div>
-                <div
-                  style={{
-                    marginBottom: '10px',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                    fontFamily: 'Poppins',
-                    fontStyle: 'normal',
-                  }}
-                >
-                  Add
-                </div>
-                <div style={{ fontSize: '10px', fontFamily: 'Poppins',textAlign: 'center' }}>
-                  Add your team Members.
-                </div>
-
-                <div className="View-Profile-Button">
-                  <InputButton
-                    className="View-Button"
-                    buttonStyle={{}}
-                    onClick={()=>{props.ParentHistory.push('/addmembers')}}
-                    title=" Add Members"
-                  />
-                </div>
-              </div>
+            <div className="People-project">
+              <DataGridDemo />
             </div>
 
-            {ProjectCollabrator.map((item,index)=>{
-              return(
-
-              <div key={index+""+item.name} className="people-div">
-              <div className="people-inner-div">
-                <div style={{ marginBottom: '10px' }}>
-                  <img className="Profile-Image" src={Profile} alt="back" />
-                </div>
-                <div
-                  style={{
-                    marginBottom: '10px',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                    fontFamily: 'Poppins',
-                    fontStyle: 'normal',
-                  }}
-                >
-                  {item.name}
-                </div>
-                <div style={{ fontSize: '14px', fontFamily: 'Poppins' }}>
-                  {item.description}
-                </div>
-
-                <div className="View-Profile-Button">
-                  <InputButton
-                    className="View-Button"
-                    buttonStyle={{}}
-                    title=" View Profile"
-                  />
-                </div>
-              </div>
-            </div>
-
-            )
-            })}
-            </Grid> */}
-
-          </div>
         </div>
       </div>
     </div>

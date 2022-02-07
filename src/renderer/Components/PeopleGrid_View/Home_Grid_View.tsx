@@ -90,6 +90,15 @@ const rows = [
   { id: 7, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Clifford',  firstName: 'Ferrara',  Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022' },
   { id: 8, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Frances',   firstName: 'Rossini',  Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022' },
   { id: 9, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Roxie',     firstName: 'Harvey',   Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022' },
+  { id: 10, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Asghar',    firstName: 'Rehan',    Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022'},
+  { id: 11, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Sarwar',    firstName: 'Azeem',    Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022' },
+  { id: 12, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Zulfiqar',  firstName: 'Irtaza',   Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022' },
+  { id: 13, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Stark',     firstName: 'Arya',     Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022' },
+  { id: 14, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Targaryen', firstName: 'Daenerys', Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022' },
+  { id: 15, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Melisandre',firstName: 'XYZ',      Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022' },
+  { id: 16, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Clifford',  firstName: 'Ferrara',  Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022' },
+  { id: 17, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Frances',   firstName: 'Rossini',  Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022' },
+  { id: 18, Image: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=35",  lastName: 'Roxie',     firstName: 'Harvey',   Role: 'Employee', Email:'rehangoraya05@gmail.com', Adding_Date: '01/01/2022' },
 ];
 
 export default function DataGridDemo() {
@@ -101,8 +110,7 @@ export default function DataGridDemo() {
         pageSize={100}
         rowsPerPageOptions={[100]}
         checkboxSelection
-        disableSelectionOnClick
-      />
+        disableSelectionOnClick/>
     </div>
   );
 }
