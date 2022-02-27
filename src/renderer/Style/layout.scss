@@ -143,4 +143,77 @@
   height:88vh;
 }
 
+.Main_Task_List{
+  height: 100%;
+  width: 100%;
+  // background-color: rgb(82, 139, 224);
+}
+
+.ADD_Task_Row{
+  height:3rem;
+  // margin-top: 0.5%;
+  // background-color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 2rem 0 2rem;
+
+
+}
+
+.Left_Side_Button{
+  margin: 0.2rem 0 0.3rem 0;
+}
+.Right_Side_Button{
+  display: flex;
+  flex-direction: row;
+  margin: 0.2rem 0 0.3rem 0;
+}
+
+.Add_Taskss_Button:hover {
+  opacity: 0.6;
+  transform: scale(0.6);
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+/**
+ Tasks Heading Line
+**/
+
+.ADD_Task_Heading_Row{
+  height:3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem 2rem 0 2rem;
+  border-top:2px solid;
+  border-bottom: 2px solid;
+  border-color: rgb(180, 180, 180);
+}
+
+.Right_Side_Heading{
+  display: flex;
+  flex-direction: row;
+}
+
+.Left_Side_Input{
+  margin: 0rem 0 0.3rem 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.add-task__content{
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+
+}
+
+.add-task__content:focus {
+  outline: none;
+}
 

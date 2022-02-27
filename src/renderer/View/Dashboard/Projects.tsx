@@ -20,6 +20,7 @@ import {links,option} from './SideBarButtonsSetails'
 import TimeLine from './gantt';
 import Board from './Board';
 import Documentation from './Documentation';
+import MyTask from './MyTask';
 
 
 function Projects({ sideBar = 'flex',...props }) {
@@ -153,7 +154,8 @@ function Projects({ sideBar = 'flex',...props }) {
             <Documentation />
         </Route>
         <Route path='/list' exact>
-          <h1>List</h1>
+          {/* <h1>List</h1> */}
+          <MyTask />
         </Route>
         <Route path='/board' exact>
           <Board />
