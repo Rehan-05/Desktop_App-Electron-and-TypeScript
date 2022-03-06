@@ -3,22 +3,20 @@ import InputButton from "renderer/Components/InputButton";
 import Icon from 'react-web-vector-icons';
 import AddTask  from 'renderer/Components/Add_Task_Schedule/Add_Task';
 import { FaRegListAlt, FaRegCalendarAlt } from 'react-icons/fa';
-
+import TodoList from 'renderer/Components/TodoList/TodoList';
   const  MyTask = ({
     showAddTaskMain = true,
     shouldShowMain = false,
   }) => {
     const [task, setTask] = useState('');
-    const [taskDate, setTaskDate] = useState('');
-    const [project, setProject] = useState('');
+
     const [showMain, setShowMain] = useState(shouldShowMain);
-    const [showProjectOverlay, setShowProjectOverlay] = useState(false);
-    const [showTaskDate, setShowTaskDate] = useState(false);
+    // const [showProjectOverlay, setShowProjectOverlay] = useState(false);
 
   return (
        <div className="Main_Task_List">
 
-        <div className="ADD_Task_Row">
+        {/* <div className="ADD_Task_Row">
           { showAddTaskMain && (
             <div className="Left_Side_Button" onClick={() => setShowMain(!showMain)}
                 onKeyDown={(e) => {
@@ -56,11 +54,11 @@ import { FaRegListAlt, FaRegCalendarAlt } from 'react-icons/fa';
                   <h6>All Task</h6>
               </div>
             </div>
-        </div>
+        </div> */}
 
  {/* Tasks Heading Line */}
 
-         <div className="ADD_Task_Heading_Row">
+         {/* <div className="ADD_Task_Heading_Row">
 
             <div className="Left_Side_Button">
               <div style={{marginTop:'0.6rem',}}>
@@ -82,16 +80,16 @@ import { FaRegListAlt, FaRegCalendarAlt } from 'react-icons/fa';
                   </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
 {/* Project Name Heading  */}
-              <div style={{margin:'20px 0px 20px 50px'}}>
+              {/* <div style={{margin:'20px 0px 20px 50px'}}>
                 <h6 style={{fontWeight:'bold'}}>Intelligent Project Allaince</h6>
-              </div>
+              </div> */}
 
  {/* Tasks Heading Line */}
 
-      <div>
+      {/* <div>
        {(showMain  && (
 
         <div className="ADD_Task_Heading_Row">
@@ -115,13 +113,13 @@ import { FaRegListAlt, FaRegCalendarAlt } from 'react-icons/fa';
                       aria-label="Cancel adding task"
                       onClick={() => {
                         setShowMain(false);
-                        setShowProjectOverlay(false);
+                        // setShowProjectOverlay(false);
                         // setShowQuickAddTask(false);
                       }}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter') {
                           setShowMain(false);
-                          setShowProjectOverlay(false);
+                          // setShowProjectOverlay(false);
                           // setShowQuickAddTask(false);
                         }
                       }}
@@ -165,9 +163,9 @@ import { FaRegListAlt, FaRegCalendarAlt } from 'react-icons/fa';
        </div>
 
         ))}
-     </div>
-
-       </div>
+     </div> */}
+     <TodoList />
+  </div>
   );
 }
 
